@@ -1,0 +1,44 @@
+body{
+    background: linear-gradient(135deg,#ff512f,#dd2476);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+.main-title{
+    padding: 20px;
+    font-size: 42px;
+    color: #ffe600;
+    text-shadow: 2px 2px 6px black;
+}
+
+.tagline{
+    font-size: 20px;
+}
+
+hr{
+    width: 80%;
+    border: 1px solid white;
+}
+
+.section-title{
+    font-size: 35px;
+}
+
+.box{
+    background: rgba(255,255,255,0.15);
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+.footer{
+    background: #111;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    margin-top: 20px;
+}

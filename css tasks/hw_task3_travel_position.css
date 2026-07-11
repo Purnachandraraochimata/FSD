@@ -1,0 +1,220 @@
+* {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body{
+        
+        background-color: #D0E7E6;
+      }
+      #one {
+        text-align: center;
+        background-color: #0a2947;
+        color: whitesmoke;
+        padding-bottom: 5px;
+        padding-top: 5px;
+      }
+      h1 {
+        text-align: center;
+        height: 60px;
+        padding-top: 10px;
+        background-color: #f3e4c9;
+        color: #8b5e3c;
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+      }
+      #main-container {
+        position: relative;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+      }
+      #main-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      #sun {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+      #car {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 10px;
+        right: 40px;
+      }
+      #Location {
+        height: 500px;
+        width: 300px;
+        position: absolute;
+        bottom: 10px;
+        left: 0px;
+      }
+      #bulb {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        bottom: 40px;
+        right: 30px;
+      }
+      #card{
+        height: 200px;
+        width: 400px;
+        background-color: white;
+        position: absolute;
+        bottom: 10px;
+        right: 250px;
+        font-size: larger;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      #button{
+        background-color: darkgreen;
+        color: white;
+        height: 30px;
+        width: 100px;
+      }
+      #ofr{
+        background-color: red;
+        color: white;
+        width: 50px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 5px;
+        position: absolute;
+        right: 230px;
+        bottom: 190px;
+      }
+      #off{
+        background-color: red;
+        color: white;
+        width: 100px;
+        height: 35px;
+        padding-top: 5px;
+        border-radius: 8px;
+        position: fixed;
+        right: 10px;
+        bottom: 20px;
+      }
+      h2{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      #destination-1{
+        background-color: white;
+        height: 80%;
+        width: 20%;
+        display: inline-block;
+        text-align: left;
+        border: 2px solid black;
+        margin-left: 20%;
+        margin-right: 30px;
+        position: relative;
+        top:30px;
+        border-radius: 1%;
+        padding: 5px;
+      }
+      #destination-2{
+        background-color: white;
+        height: 80%;
+        width: 20%;
+        display: inline-block;
+        text-align: left;
+        border: 2px solid black;
+        margin-right: 30px;
+        border-radius: 1%;
+        padding: 5px;
+      }
+      #destination-3{
+        background-color: white;
+        height: 80%;
+        width: 20%;
+        display: inline-block;
+        text-align: left;
+        border: 2px solid black;
+        position: relative;
+        top: 30px;
+        border-radius: 1%;
+        padding: 5px;
+      }
+      
+      #des-1{
+        width: 100%;
+        height: 70%;
+      }
+      #des-2{
+        width: 100%;
+        height: 70%;
+      }
+      #des-3{
+        width: 100%;
+        height: 70%;
+      }
+      #gallery{
+        margin-top: 100px;
+      }
+      #gal{
+        border: 2px solid black;
+        height: 750px;
+        width: 55%;
+        margin-left: 25%;
+        background-color: #C1EBE9;
+        position: relative;
+      }
+      .gall{
+        height: 300px;
+        width: 350px;
+        border: 6px solid white;
+      }
+      #gal1{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+      }
+      #gal2{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
+      #gal3{
+        position: absolute;
+        right: 30px;
+        top: 40px;
+      }
+      #gal4{
+        position: absolute;
+        bottom: 50px;
+        right: 40px;
+      }
+      #gal5{
+        position: absolute;
+        top: 20%;
+        left: 25%;
+        height: 400px;
+      }
+      #summary{
+        width: 55%;
+        margin-left: 25%;
+        text-align: justify;
+        margin-bottom: 50px;
+      }
+      .sum{
+        margin-bottom: 10px;
+        font-size: larger;
+        word-spacing: 6px;
+        line-height: 1.6;
+      }
+      #sum-heading{
+        text-align: left;
+      }

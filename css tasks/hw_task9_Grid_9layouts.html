@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 Layout patterns</title>
+    <style>
+        body{
+            background: black;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .layout{
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 200px;
+            gap: 4px;
+            background: rgb(55, 51, 61);
+        }
+        .topbar{
+            display: flex;
+            gap: 5px;
+            padding: 5px;
+        }
+        .dot{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .bar{
+            flex: 1;
+            height: 10px;
+            background: white;
+            border-radius: 2px;
+        }
+        .l1{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{
+            display: grid;
+        }
+        .b1{background-color: red;}
+        .b2{background-color: rgb(250, 136, 23);}
+        .b3{background-color: rgb(248, 248, 7);}
+        .b4{background-color: rgb(21, 244, 140);}
+        .b5{background-color: #00ffff;}
+        .b6{background-color: aquamarine;}
+        .l2{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{display: grid;}
+        .b7{background-color: red; grid-column: 1/3; grid-row: 1/2;}
+        .b8{background-color: rgb(250, 136, 23); grid-column: 3/4; grid-row: 1/3;}
+        .b9{background-color: rgb(21, 244, 140);}
+        .b10{background-color: #00ffff;}
+        .l3{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 70px 1fr;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{display: grid;}
+        .b13{background-color: red; grid-column: 2/4;}
+        .b11{background-color: rgb(250, 136, 23); grid-column: 1/4;}
+        .b12{background-color: rgb(21, 244, 140);}
+        .b14{background-color: #00ffff; grid-column: 1/4;}
+        .l4{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 70px 30px;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{display: grid;}
+        .b16{background-color: red; grid-column: 4/7;}
+        .b15{background-color: rgb(250, 136, 23); grid-column: 1/4;}
+        .b19{background-color: rgb(248, 248, 7); grid-column: 1/7;}
+        .b17{background-color: rgb(21, 244, 140); grid-column: 1/3;}
+        .b18{background-color: #00ffff; grid-column: 3/7;}
+        .l5{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{display: grid;}
+        .b20{background-color: red;}.b21{background-color: rgb(250, 136, 23);}.b22{background-color: rgb(248, 248, 7);}.b23{background-color: rgb(21, 244, 140);}.b24{background-color: #00ffff;}.b25{background-color: aquamarine;}
+        .b26{background-color: red;}.b27{background-color: rgb(250, 136, 23);}.b28{background-color: rgb(248, 248, 7);}.b29{background-color: rgb(21, 244, 140);}.b30{background-color: #00ffff;}.b31{background-color: aquamarine;}
+        .b32{background-color: red;}.b33{background-color: rgb(250, 136, 23);}.b34{background-color: rgb(248, 248, 7);}.b35{background-color: rgb(21, 244, 140);}.b36{background-color: #00ffff;}.b37{background-color: aquamarine;}
+        .l6{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{display: grid;}
+        .b38{background-color: red; grid-column: 1/3;}.b39{background-color: rgb(21, 244, 140);}.b40{background-color: rgb(250, 136, 23);}
+        .b41{background-color: rgb(250, 136, 23);}.b42{background-color: rgb(21, 244, 140);}.b43{background-color: #00ffff;}.b44{background-color: rgb(55, 51, 61);}
+        .b45{background-color: rgb(248, 248, 7); grid-column: 1/3; grid-row: 3/5;}.b46{background-color: aquamarine;}.b47{background-color: red;}.b48{background-color: rgb(21, 244, 140); grid-column: 3/4; grid-row: 4/5;}.b49{background-color: rgb(55, 51, 61); grid-column: 4/5; grid-row: 4/5;}
+        .b50{background-color: aquamarine; grid-column: 1/4;}.b51{background-color: rgb(248, 248, 7);}
+        .l7{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 130px;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{display: grid;}
+        .b66{background-color: rgb(250, 136, 23);}.b67{background-color: aquamarine;}
+        .b68{background-color: red;}
+        .b69{background-color: rgb(21, 244, 140); 
+            display: grid; gap: 10px; border-spacing: 10px;}
+        .b70{background-color: #00ffff; grid-column: 1/3; width: 190px;}
+        .b71{background-color: aquamarine;}
+        .b72{background-color: rgb(250, 136, 23);}
+        .l8{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{display: grid;}
+        .b52{background-color: red;}.b53{background-color: rgb(250, 136, 23);}.b54{background-color: aquamarine;}.b55{background-color: #00ffff;}.b56{background-color: rgb(21, 244, 140);}
+        .b57{background-color: rgb(250, 136, 23);}.b58{background-color: red;}.b59{background-color: rgb(248, 248, 7); grid-column: 3/6;}
+        .b60{background-color: aquamarine; grid-column: 1/6;}
+        .l9{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 10px;
+            width: 390px;
+            height: 170px;
+            margin: auto;
+        }
+        .box{display: grid;}
+        .b61{background-color: rgb(250, 136, 23); grid-column: 1/4;}
+        .b62{background-color: rgb(21, 244, 140); grid-row: 2/4;}
+        .b63{background-color: aquamarine; grid-column: 2/4;}.b64{background-color: red;}.b65{background-color: rgb(250, 136, 23);}
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l1">
+            <div class="box b1"></div>
+            <div class="box b2"></div>
+            <div class="box b3"></div>
+            <div class="box b4"></div>
+            <div class="box b5"></div>
+            <div class="box b6"></div>
+        </div>
+    </div>
+     <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l2">
+            <div class="box b7"></div>
+            <div class="box b8"></div>
+            <div class="box b9"></div>
+            <div class="box b10"></div>
+        </div>
+    </div>
+    <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l3">
+            <div class="box b11"></div>
+            <div class="box b12"></div>
+            <div class="box b13"></div>
+            <div class="box b14"></div>
+        </div>
+    </div>
+    <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l4">
+            <div class="box b15"></div>
+            <div class="box b16"></div>
+            <div class="box b17"></div>
+            <div class="box b18"></div><div class="box b19"></div>
+        </div>
+    </div>
+    <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l5">
+            <div class="box b20"></div><div class="box b21"></div><div class="box b22"></div><div class="box b23"></div>
+            <div class="box b24"></div><div class="box b25"></div><div class="box b26"></div><div class="box b27"></div>
+            <div class="box b28"></div><div class="box b29"></div><div class="box b30"></div><div class="box b31"></div>
+            <div class="box b32"></div><div class="box b33"></div><div class="box b34"></div><div class="box b35"></div>
+            <div class="box b36"></div><div class="box b37"></div>
+        </div>
+    </div>
+    <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l6">
+            <div class="box b38"></div><div class="box b39"></div><div class="box b40"></div><div class="box b41"></div>
+            <div class="box b42"></div><div class="box b43"></div><div class="box b44"></div><div class="box b45"></div>
+            <div class="box b46"></div><div class="box b47"></div><div class="box b48"></div><div class="box b49"></div>
+            <div class="box b50"></div><div class="box b51"></div>
+        </div>
+    </div>
+    <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l7">
+            <div class="box b66"></div>
+            <div class="box b67"></div>
+            <div class="box b68"></div>
+            <div class="box b69">
+            <div class="child b70"></div>
+            <div class="child b71"></div>
+            <div class="child b72"></div>
+            </div>
+        </div>
+    </div>
+    <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l8">
+            <div class="box b52"></div><div class="box b53"></div><div class="box b54"></div><div class="box b55"></div>
+            <div class="box b56"></div><div class="box b57"></div><div class="box b58"></div><div class="box b59"></div>
+            <div class="box b60"></div>
+        </div>
+    </div>
+    <div class="layout">
+        <div class="topbar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="l9">
+            <div class="box b61"></div>
+            <div class="box b62"></div>
+            <div class="box b63"></div>
+            <div class="box b64"></div>
+            <div class="box b65"></div>
+        </div>
+    </div>
+</body>
+</html>
