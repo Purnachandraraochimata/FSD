@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 100px 400px 100px 100px;
+            grid-template-areas:"header header header header"
+            "sidebar main main rightbar"
+            "footer footer footer footer";
+            gap: 10px;
+           color: whitesmoke;
+           font-family: 'lucida handwriting', Courier, monospace;
+           font-size: 20px;
+
+        }
+.header{
+    background-color: #efa30b;
+    grid-area:header ;
+     border-radius: 15px;
+     text-align: center;
+}
+.sidebar{
+    background-color: #3dfc0d;
+    grid-area: sidebar;
+     border-radius: 15px;
+      text-align: center;
+}
+.rightbar{
+    background-color:#06a4e7 ;
+    grid-area:rightbar ;
+     border-radius: 15px;
+      text-align: center;
+}
+.main{
+    background-color: #830ce4;
+    grid-area: main;
+     border-radius: 15px;
+      text-align: center;
+}
+.footer{
+    background-color: #e00808;
+    grid-area: footer;
+     border-radius: 15px;
+      text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="rightbar">Rightbar</div>
+    <div class="main">Main</div>
+    <div class="footer">Footer</div>
+    </div>
+</body>
+</html>>
