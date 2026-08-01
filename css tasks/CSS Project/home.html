@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxury Stay — a Marriott-inspired luxury hotel booking experience with curated rooms, destinations, and member rewards.">
+  <meta name="keywords" content="luxury hotel, booking, resort, rooms, travel">
+  <meta name="author" content="Luxury Stay">
+  <meta name="theme-color" content="#0b3b2e">
+  <title>Elite Stays | Refined Hotel Booking</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="home-page">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo" aria-label="EliteStays logo"><img src="logo.png" alt="EliteStays logo"></a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn-login">Login</a>
+      </div>
+
+      <div class="nav-actions">
+        <select class="lang-select" aria-label="Language selector">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="es">ES</option>
+          <option value="de">DE</option>
+          <option value="zh">ZH</option>
+          <option value="ru">RU</option>
+          <option value="pt">PT</option>
+          <option value="hi">HI</option>
+          <option value="ar">AR</option>
+          <option value="ja">JP</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="eyebrow">Marriott-inspired · Est. concept 2026</span>
+      <h1>Stay at the hotel that defines refined comfort</h1>
+      <p>Experience elegant rooms, attentive service, and a peaceful retreat designed for every guest.</p>
+
+      <!-- Booking Form: form, label, input, select, option, button -->
+      <form id="booking-form" class="booking-form" action="#" method="get">
+        <div class="field-group">
+          <label for="destination">Destination</label>
+          <input type="text" id="destination" name="destination" placeholder="City or hotel">
+        </div>
+        <div class="field-group">
+          <label for="checkin">Check In</label>
+          <input type="date" id="checkin" name="checkin">
+        </div>
+        <div class="field-group">
+          <label for="checkout">Check Out</label>
+          <input type="date" id="checkout" name="checkout">
+        </div>
+        <div class="field-group">
+          <label for="guests">Guests</label>
+          <select id="guests" name="guests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4+ Guests</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="roomtype">Room Type</label>
+          <select id="roomtype" name="roomtype">
+            <option value="deluxe">Deluxe Room</option>
+            <option value="executive">Executive Room</option>
+            <option value="ocean">Ocean View</option>
+            <option value="suite">Presidential Suite</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <button type="submit" class="btn btn-gold btn-pulse btn-block">Search</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ HOTEL SPACES ============ -->
+  <section class="section" id="destinations">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="eyebrow">Hotel experience</span>
+        <h2>Featured Hotel Spaces</h2>
+        <p>Explore the places within our hotel where comfort, luxury, and hospitality come together.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <!-- Top 4 featured destinations -->
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Trending</span>
+            <img src="https://plus.unsplash.com/premium_photo-1697729914552-368899dc4757?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZHViYWl8ZW58MHx8MHx8fDA%3D" alt="Dubai skyline">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Dubai</h3><span class="rating">★ 4.9</span></div>
+            <p class="price">From ₹320 <span>/ night</span></p>
+            <a href="places/dubai.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Beach</span>
+            <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFsZGl2ZXMlMjByZXNvcnR8ZW58MHx8MHx8fDA%3D" alt="Maldives overwater villas">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Maldives</h3><span class="rating">★ 5.0</span></div>
+            <p class="price">From ₹540 <span>/ night</span></p>
+            <a href="places/maldives.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Coastal</span>
+            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z29hfGVufDB8fDB8fHww" alt="Goa beach resort">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Goa</h3><span class="rating">★ 4.7</span></div>
+            <p class="price">From ₹140 <span>/ night</span></p>
+            <a href="places/goa.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Romantic</span>
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFyaXN8ZW58MHx8MHx8fDA%3D" alt="Paris Eiffel Tower">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Paris</h3><span class="rating">★ 4.8</span></div>
+            <p class="price">From ₹290 <span>/ night</span></p>
+            <a href="places/paris.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-md">
+        <a href="destinations.html" class="btn btn-outline">View All Spaces</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LUXURY ROOMS (preview) ============ -->
+  <section class="section section-alt" id="rooms">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="eyebrow">Accommodation</span>
+        <h2>Luxury Rooms &amp; Suites</h2>
+        <p>Six room categories, each with its own character and view.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card fade-up">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=800&auto=format&fit=crop" alt="Deluxe room interior"></div>
+          <div class="card-body">
+            <h3>Deluxe Room</h3>
+            <p>King bed · City view · 32 sqm</p>
+            <p class="price mt-sm">₹180 <span>/ night</span></p>
+          </div>
+        </article>
+        <article class="card fade-up">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop" alt="Executive room interior"></div>
+          <div class="card-body">
+            <h3>Executive Room</h3>
+            <p>Lounge access · Work desk · 38 sqm</p>
+            <p class="price mt-sm">₹240 <span>/ night</span></p>
+          </div>
+        </article>
+        <article class="card fade-up">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=800&auto=format&fit=crop" alt="Ocean view room"></div>
+          <div class="card-body">
+            <h3>Ocean View</h3>
+            <p>Private balcony · Sea view · 40 sqm</p>
+            <p class="price mt-sm">₹310 <span>/ night</span></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-md">
+        <a href="rooms.html" class="btn btn-gold">View All Rooms &amp; Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="eyebrow">The difference</span>
+        <h2>Why Choose Us</h2>
+      </div>
+      <div class="features">
+        <div class="feature-card fade-up">
+          <div class="feature-icon">🛏️</div>
+          <h3>Luxury Rooms</h3>
+          <p>Hand-finished interiors across every category.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-1">
+          <div class="feature-icon">☎️</div>
+          <h3>24×7 Support</h3>
+          <p>A concierge is always one call away.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-2">
+          <div class="feature-icon">📶</div>
+          <h3>Free WiFi</h3>
+          <p>High-speed connectivity in every room.</p>
+        </div>
+        <div class="feature-card fade-up fade-up-delay-3">
+          <div class="feature-icon">💰</div>
+          <h3>Best Price Guarantee</h3>
+          <p>Find it cheaper elsewhere, we match it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOTEL FACILITIES ============ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="eyebrow">On property</span>
+        <h2>Hotel Facilities</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="facility-card fade-up"><div class="facility-icon">🏊</div><p>Swimming Pool</p></div>
+        <div class="facility-card fade-up"><div class="facility-icon">🏋️</div><p>Gym</p></div>
+        <div class="facility-card fade-up"><div class="facility-icon">💆</div><p>Spa</p></div>
+        <div class="facility-card fade-up"><div class="facility-icon">🍽️</div><p>Restaurant</p></div>
+        <div class="facility-card fade-up"><div class="facility-icon">🏢</div><p>Conference Hall</p></div>
+        <div class="facility-card fade-up"><div class="facility-icon">🚗</div><p>Parking</p></div>
+        <div class="facility-card fade-up"><div class="facility-icon">🧸</div><p>Kids Area</p></div>
+        <div class="facility-card fade-up"><div class="facility-icon">🧺</div><p>Laundry</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPECIAL OFFERS ============ -->
+  <section class="section" id="offers">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="eyebrow">Limited time</span>
+        <h2>Special Offers</h2>
+      </div>
+      <div class="offers-row">
+        <div class="offer-card offer-1"><span class="offer-tag">30%</span><h3>30% Off</h3><p>On stays booked 21 days in advance.</p></div>
+        <div class="offer-card offer-2"><span class="offer-tag">Wk</span><h3>Weekend Package</h3><p>Two nights, late checkout included.</p></div>
+        <div class="offer-card offer-3"><span class="offer-tag">☀</span><h3>Summer Sale</h3><p>Beachfront suites at their lowest rate.</p></div>
+        <div class="offer-card offer-4"><span class="offer-tag">Fam</span><h3>Family Package</h3><p>Connecting rooms &amp; free kids' meals.</p></div>
+        <div class="offer-card offer-5"><span class="offer-tag">Lux</span><h3>Luxury Escape</h3><p>Suite upgrade with airport transfer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="section section-alt" id="gallery">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="eyebrow">A closer look</span>
+        <h2>Gallery</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=600&auto=format&fit=crop" alt="Hotel lobby">
+          <figcaption>Lobby Welcome</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=600&auto=format&fit=crop" alt="Hotel pool">
+          <figcaption>Poolside Escape</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=600&auto=format&fit=crop" alt="Suite bedroom">
+          <figcaption>Suite Comfort</figcaption>
+        </figure>
+        <figure>
+          <img src="https://plus.unsplash.com/premium_photo-1676320514136-5a15d9f97dfa?w=600&auto=format&fit=crop" alt="Bathroom interior">
+          <figcaption>Bathroom Luxury</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=600&auto=format&fit=crop" alt="Rooftop bar">
+          <figcaption>Rooftop View</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=600&auto=format&fit=crop" alt="Hotel exterior at night">
+          <figcaption>Exterior Glow</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=600&auto=format&fit=crop" alt="Room detail">
+          <figcaption>Room Detail</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1773924093206-9a433a14bb44?w=600&auto=format&fit=crop" alt="Spa area">
+          <figcaption>Spa Relaxation</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=600&auto=format&fit=crop" alt="Restaurant table setting">
+          <figcaption>Dining Scene</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CUSTOMER REVIEWS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="eyebrow">Guest voices</span>
+        <h2>Customer Reviews</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="review-card fade-up">
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="Guest photo, Amara N.">
+            <div>
+              <h3 class="reviewer-name">Amara N.</h3>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+          <p>"The ocean view suite was worth every penny — service felt personal from check-in to checkout."</p>
+          <p class="reviewer-location">Maldives</p>
+        </div>
+        <div class="review-card fade-up">
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=200&auto=format&fit=crop" alt="Guest photo, Daniela R.">
+            <div>
+              <h3 class="reviewer-name">Daniela R.</h3>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+          <p>"Booking took two minutes and the concierge remembered our anniversary. Small touches matter."</p>
+          <p class="reviewer-location">Paris</p>
+        </div>
+        <div class="review-card fade-up">
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=200&auto=format&fit=crop" alt="Guest photo, Priya K.">
+            <div>
+              <h3 class="reviewer-name">Priya K.</h3>
+              <span class="stars">★★★★☆</span>
+            </div>
+          </div>
+          <p>"Family suite had space for everyone, and the kids' area kept the little ones happy all week."</p>
+          <p class="reviewer-location">Goa</p>
+        </div>
+        <div class="review-card fade-up">
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Guest photo, Sofia M.">
+            <div>
+              <h3 class="reviewer-name">Sofia M.</h3>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+          <p>"The spa treatment was heavenly and our room looked exactly like the pictures. Highly recommended!"</p>
+          <p class="reviewer-location">Tokyo</p>
+        </div>
+        <div class="review-card fade-up">
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop" alt="Guest photo, Maya C.">
+            <div>
+              <h3 class="reviewer-name">Maya C.</h3>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+          <p>"Breakfast buffet had the best variety, and the rooftop view at sunset was unforgettable."</p>
+          <p class="reviewer-location">Dubai</p>
+        </div>
+        <div class="review-card fade-up">
+          <div class="reviewer">
+            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=200&auto=format&fit=crop" alt="Guest photo, Lina S.">
+            <div>
+              <h3 class="reviewer-name">Lina S.</h3>
+              <span class="stars">★★★★☆</span>
+            </div>
+          </div>
+          <p>"The service was prompt, the suite was clean, and the location made it easy to explore the city."</p>
+          <p class="reviewer-location">London</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEMBERSHIP ============ -->
+  <section class="section section-dark">
+    <div class="container membership">
+      <div class="fade-up">
+        <span class="eyebrow">Stay Rewards</span>
+        <h2>Join the Elite Circle</h2>
+        <p class="text-muted">Inspired by Marriott Bonvoy — earn points and unlock privileges from your very first stay.</p>
+        <ul class="member-benefits">
+          <li>Priority Check-in</li>
+          <li>Rewards on Every Stay</li>
+          <li>Free Breakfast</li>
+          <li>Complimentary Room Upgrade</li>
+        </ul>
+        <a href="#" class="btn btn-gold mt-md">Join Now</a>
+      </div>
+      <div class="badge-ring fade-up">
+        <div class="badge-core">
+          <strong>Circle</strong>
+          <span>MEMBER</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOTEL VIDEO ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head fade-up">
+        <span class="eyebrow">Take a tour</span>
+        <h2>Hotel Tour Video</h2>
+      </div>
+      <div class="video-wrap fade-up">
+        <video controls poster="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-caption">
+          <p>Watch the full hotel tour to see every area of the property.</p>
+          <p>Highlights include: lobby welcome, guest rooms, spa area - relaxation and treatments, restaurant dining, rooftop lounge, and outdoor views.</p>
+          <p>This video is long-form by design, so you can follow the full hotel journey from start to finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="section section-alt newsletter">
+    <div class="container">
+      <span class="eyebrow">Stay in touch</span>
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Offers and new destinations, straight to your inbox.</p>
+      <form class="newsletter-form" action="#" method="post">
+        <input type="email" name="subscriber_email" placeholder="you@example.com" required>
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo" aria-label="EliteStays logo"><img src="logo.png" alt="EliteStays logo"></a>
+        <p class="text-muted">Welcome to Elite Stays — curated rooms, destinations, and member benefits.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Membership</h4>
+        <ul class="footer-links">
+          <li><a href="login.html">Member Login</a></li>
+          <li><a href="offers.html">Member Offers</a></li>
+          <li><a href="#">Rewards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Support</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="offers.html">Current Deals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="social-row">
+          <a href="#" target="_blank" aria-label="Instagram">IG</a>
+          <a href="#" target="_blank" aria-label="Facebook">FB</a>
+          <a href="#" target="_blank" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elite Stays — curated stays and refined hospitality.</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('booking-form');
+      const destinationInput = document.getElementById('destination');
+      const checkinInput = document.getElementById('checkin');
+      const checkoutInput = document.getElementById('checkout');
+
+      const destinationMap = {
+        'dubai': 'places/dubai.html',
+        'maldives': 'places/maldives.html',
+        'goa': 'places/goa.html',
+        'paris': 'places/paris.html',
+        'bali': 'places/bali.html',
+        'tokyo': 'places/tokyo.html',
+        'santorini': 'places/santorini.html',
+        'london': 'places/london.html',
+        'new york': 'places/newyork.html',
+        'newyork': 'places/newyork.html',
+        'newyorkcity': 'places/newyork.html',
+        'andhra pradesh': 'places/andhrapradesh.html',
+        'andhrapradesh': 'places/andhrapradesh.html',
+        'seven sisters': 'places/seven-sisters.html',
+        '7 sisters': 'places/seven-sisters.html',
+        '7sisters': 'places/seven-sisters.html',
+        'telangana': 'places/telangana.html',
+        'karnataka': 'places/karnataka.html',
+        'kerala': 'places/kerala.html',
+        'coimbatore': 'places/coimbatore.html',
+        'chennai': 'places/chennai.html'
+      };
+
+      function normalize(value) {
+        return value.trim().toLowerCase();
+      }
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const destinationRaw = normalize(destinationInput.value || '');
+        const checkin = checkinInput.value;
+        const checkout = checkoutInput.value;
+
+        if (!destinationRaw) {
+          alert('Please enter a destination.');
+          destinationInput.focus();
+          return;
+        }
+
+        // build query params for dates if provided
+        const params = new URLSearchParams();
+        if (checkin) params.set('checkin', checkin);
+        if (checkout) params.set('checkout', checkout);
+
+        // find best match in map (substring match)
+        let target = '';
+        for (const key in destinationMap) {
+          if (destinationRaw.includes(key)) {
+            target = destinationMap[key];
+            break;
+          }
+        }
+
+        if (!target) {
+          // fallback: try exact replacement (no spaces)
+          const compact = destinationRaw.replace(/\s+/g, '');
+          if (destinationMap[compact]) target = destinationMap[compact];
+        }
+
+        if (target) {
+          const url = params.toString() ? `${target}?${params.toString()}` : target;
+          window.location.href = url;
+        } else {
+          // no matching page — go to the destinations listing and pass query
+          const url = params.toString() ? `destinations.html?${params.toString()}` : 'destinations.html';
+          window.location.href = url;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+/* =========================================================
+   STEP 1: Fade Up Animation
+   ---------------------------------------------------------
+   This section defines a simple fade-and-rise animation used
+   on entry elements throughout the site.
+   ========================================================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.9s ease both;
+}
+.fade-up-delay-1 { animation-delay: 0.15s; }
+.fade-up-delay-2 { animation-delay: 0.3s; }
+.fade-up-delay-3 { animation-delay: 0.45s; }
+
+/* =========================================================
+   STEP 2: Slide Up Hero Animation
+   ---------------------------------------------------------
+   Used for hero text and form entrance animation on home page.
+   ========================================================= */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-content {
+  animation: slideUp 1s ease both;
+}
+.booking-form {
+  animation: slideUp 1.1s ease both;
+  animation-delay: 0.2s;
+}
+
+/* =========================================================
+   STEP 3: Floating Icon Animation
+   ---------------------------------------------------------
+   Creates a slow up/down motion for feature icons.
+   ========================================================= */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.feature-icon {
+  animation: float 3.4s ease-in-out infinite;
+}
+.feature-card:nth-child(2) .feature-icon { animation-delay: 0.3s; }
+.feature-card:nth-child(3) .feature-icon { animation-delay: 0.6s; }
+.feature-card:nth-child(4) .feature-icon { animation-delay: 0.9s; }
+
+/* =========================================================
+   STEP 4: Rotating Badge Animation
+   ---------------------------------------------------------
+   Used for the membership badge on the home page.
+   ========================================================= */
+@keyframes rotateBadge {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.badge-ring {
+  animation: rotateBadge 18s linear infinite;
+}
+.badge-ring .badge-core {
+  animation: rotateBadge 18s linear infinite reverse;
+}
+
+/* =========================================================
+   STEP 5: Pulse Call-To-Action
+   ---------------------------------------------------------
+   Adds an attention-grabbing ring behind call-to-action buttons.
+   ========================================================= */
+@keyframes pulseCta {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(201, 162, 39, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 162, 39, 0);
+  }
+}
+.btn-pulse {
+  animation: pulseCta 2.2s infinite;
+}
+
+/* =========================================================
+   STEP 6: Zoom Utility for Images
+   ---------------------------------------------------------
+   Provides a reusable zoom-in keyframe for gallery elements.
+   ========================================================= */
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
+
+/* =========================================================
+   STEP 7: Offer Background Drift
+   ---------------------------------------------------------
+   Creates a slow moving gradient effect on offer cards.
+   ========================================================= */
+@keyframes drift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.offer-card {
+  background-size: 200% 200%;
+  animation: drift 8s ease infinite;
+}
+
+/* =========================================================
+   STEP 8: Reduced Motion Support
+   ---------------------------------------------------------
+   Disables most animation/transition motion for accessibility.
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.001ms;
+  }
+}
+
+/* =========================================================
+   STEP 9: Page-Specific Animation Modes
+   ---------------------------------------------------------
+   Apply unique animation styles for each page based on body class.
+   ========================================================= */
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes tiltIn {
+  from {
+    opacity: 0;
+    transform: translateY(32px) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes zoomFade {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gallerySpread {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+body.home-page .hero-content,
+body.home-page .booking-form {
+  opacity: 0;
+  animation: popIn 0.95s ease forwards;
+}
+body.home-page .booking-form {
+  animation-delay: 0.18s;
+}
+body.home-page .offer-card {
+  opacity: 0;
+  animation: drift 9s ease infinite, zoomFade 0.9s ease forwards;
+}
+body.home-page .offer-card:nth-child(1) { animation-delay: 0.08s; }
+body.home-page .offer-card:nth-child(2) { animation-delay: 0.16s; }
+body.home-page .offer-card:nth-child(3) { animation-delay: 0.24s; }
+
+body.rooms-page .card {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: popIn 0.92s ease forwards;
+}
+body.rooms-page .card:nth-of-type(odd) {
+  animation-delay: 0.1s;
+}
+body.rooms-page .card:nth-of-type(even) {
+  animation-delay: 0.22s;
+}
+body.rooms-page .section-head {
+  opacity: 0;
+  animation: tiltIn 0.9s ease forwards;
+}
+
+body.destinations-page .destination-card {
+  opacity: 0;
+  animation: tiltIn 0.88s ease forwards;
+}
+body.destinations-page .destination-card:nth-child(1) {
+  animation-delay: 0.08s;
+}
+body.destinations-page .destination-card:nth-child(2) {
+  animation-delay: 0.16s;
+}
+body.destinations-page .destination-card:nth-child(3) {
+  animation-delay: 0.24s;
+}
+body.destinations-page .destination-card:nth-child(4) {
+  animation-delay: 0.32s;
+}
+body.destinations-page .destination-card:nth-child(5) {
+  animation-delay: 0.40s;
+}
+body.destinations-page .destination-card:nth-child(6) {
+  animation-delay: 0.48s;
+}
+body.destinations-page .destination-card:nth-child(7) {
+  animation-delay: 0.56s;
+}
+body.destinations-page .destination-card:nth-child(8) {
+  animation-delay: 0.64s;
+}
+
+body.gallery-page .photo {
+  opacity: 0;
+  transform: scale(0.96);
+  animation: gallerySpread 0.9s ease forwards;
+}
+body.gallery-page .photo:nth-of-type(1) {
+  animation-delay: 0.08s;
+}
+body.gallery-page .photo:nth-of-type(2) {
+  animation-delay: 0.16s;
+}
+body.gallery-page .photo:nth-of-type(3) {
+  animation-delay: 0.24s;
+}
+body.gallery-page .photo:nth-of-type(4) {
+  animation-delay: 0.32s;
+}
+body.gallery-page .photo:nth-of-type(5) {
+  animation-delay: 0.40s;
+}
+body.gallery-page .photo:nth-of-type(6) {
+  animation-delay: 0.48s;
+}
+body.gallery-page .photo:nth-of-type(7) {
+  animation-delay: 0.56s;
+}
+body.gallery-page .photo:nth-of-type(8) {
+  animation-delay: 0.64s;
+}
+body.gallery-page .photo:hover {
+  transform: scale(1.02);
+}
+
+body.offers-page .offer-card {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  animation: zoomFade 0.9s ease forwards;
+}
+body.offers-page .offer-card:nth-child(1) {
+  animation-delay: 0.08s;
+}
+body.offers-page .offer-card:nth-child(2) {
+  animation-delay: 0.16s;
+}
+body.offers-page .offer-card:nth-child(3) {
+  animation-delay: 0.24s;
+}
+body.offers-page .offer-card:nth-child(4) {
+  animation-delay: 0.32s;
+}
+body.offers-page .offer-card:nth-child(5) {
+  animation-delay: 0.40s;
+}
+body.offers-page .offer-card:nth-child(6) {
+  animation-delay: 0.48s;
+}
+
+body.contact-page .fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.85s ease forwards;
+}
+body.contact-page .fade-up:nth-of-type(2) {
+  animation-delay: 0.16s;
+}
+body.contact-page .booking-form,
+body.contact-page .video-wrap,
+body.contact-page .compare-table {
+  opacity: 0;
+  animation: popIn 0.9s ease forwards;
+}
+body.contact-page .video-wrap {
+  animation-delay: 0.18s;
+}
+body.contact-page .compare-table {
+  animation-delay: 0.24s;
+}
+
+body.login-page .booking-form {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: popIn 0.9s ease forwards;
+}
+body.login-page .section-head {
+  opacity: 0;
+  animation: tiltIn 0.9s ease forwards;
+}

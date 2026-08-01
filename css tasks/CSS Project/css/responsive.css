@@ -1,0 +1,187 @@
+/* =========================================================
+   DESKTOP / DEFAULT STYLES
+   ---------------------------------------------------------
+   Desktop is the default layout. No media query is required
+   here, because these values are inherited unless a smaller
+   breakpoint applies.
+   ========================================================= */
+
+/* =========================================================
+   LAPTOP / TABLET STYLES (≤ 1200px)
+   ---------------------------------------------------------
+   Adjust layout for laptop and larger tablet screens.
+   ========================================================= */
+@media (max-width: 1200px) {
+  .container {
+    width: min(100%, calc(100% - 1.5rem));
+    max-width: 1140px;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .membership {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero {
+    min-height: 90vh;
+  }
+}
+
+/* =========================================================
+   TABLET STYLES (≤ 768px)
+   ---------------------------------------------------------
+   Stack navigation and transform the hero layout for smaller
+   screens.
+   ========================================================= */
+@media (max-width: 768px) {
+  .site-header {
+    min-height: auto;
+  }
+  .nav-wrap {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding-block: 1rem;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    width: 100%;
+  }
+  .nav-actions {
+    display: flex;
+    gap: var(--space-sm);
+  }
+  .nav-actions .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+  .hero-content {
+    width: 100%;
+  }
+  .booking-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features {
+    flex-direction: column;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   MOBILE STYLES (≤ 480px)
+   ---------------------------------------------------------
+   Ensure readability and usability on narrow phone screens.
+   ========================================================= */
+@media (max-width: 480px) {
+  body {
+    min-width: 100%;
+  }
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .social-row {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .offer-card {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  h1 {
+    font-size: 2.35rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .section {
+    padding: calc(var(--space-lg) / 2) 0;
+  }
+  .hero {
+    min-height: auto;
+    padding: 1.5rem 0;
+  }
+  .hero-content {
+    width: 100%;
+  }
+  .booking-form {
+    width: 100%;
+  }
+  .nav-wrap {
+    justify-content: center;
+  }
+  .auth-buttons,
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-links {
+    justify-content: center;
+  }
+  .logo img {
+    max-width: 140px;
+  }
+  .card,
+  .destination-card,
+  .offer-card,
+  .photo {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    min-height: auto;
+    padding: 1.25rem 0;
+  }
+  .hero-content {
+    padding-inline: 0.5rem;
+  }
+  .booking-form {
+    padding: 1rem;
+  }
+}

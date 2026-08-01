@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations | Elite Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* --- Added: media styling for destination detail sections --- */
+    .destination-detail{
+      display:block;
+      margin-bottom: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #e4d5bc;
+    }
+    .destination-detail:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+ 
+    .detail-media{ position:relative; }
+    .detail-img img{ width:100%; max-height:420px; object-fit:cover; display:block;
+      border-radius: var(--radius, 10px); margin-bottom:10px; }
+ 
+    .detail-gallery{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:8px;
+      margin: 0 0 18px;
+    }
+    .detail-gallery button{
+      padding:0; border:2px solid transparent; border-radius:8px;
+      overflow:hidden; cursor:pointer; background:none; line-height:0;
+    }
+    .detail-gallery button img{
+      width:100%; height:80px; object-fit:cover; display:block;
+      transition: transform .25s ease;
+    }
+    .detail-gallery button:hover img{ transform: scale(1.06); }
+    .detail-gallery button.active-thumb{ border-color:#c79a4b; }
+ 
+    .detail-video{
+      position:relative; width:100%; padding-top:42%;
+      border-radius:10px; overflow:hidden; margin: 4px 0 22px;
+      background:#111;
+    }
+    .detail-video iframe{
+      position:absolute; inset:0; width:100%; height:100%; border:0;
+    }
+    .detail-video-label{
+      font-size:12px; text-transform:uppercase; letter-spacing:.08em;
+      color:#7a7266; font-weight:700; margin: 18px 0 6px;
+    }
+    .price-bar{
+      display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
+      background:#0e5c57; color:#fff; border-radius:12px; padding:16px 20px; margin-top:20px;
+    }
+    .price-bar .amount{ font-size:20px; font-weight:700; }
+    .price-bar .amount span{ font-size:12px; font-weight:400; opacity:.75; }
+    .price-bar .book-btn{
+      background:#c79a4b; color:#241a05; border:none; font-weight:700;
+      font-size:14px; padding:10px 20px; border-radius:999px; cursor:pointer;
+    }
+ 
+    @media (max-width: 640px){
+      .detail-gallery{ grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body class="destinations-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo"><img src="logo.png" alt="EliteStays logo"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="destinations.html" class="active">Destinations</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn-login">Login</a>
+      </div>
+      <div class="nav-actions">
+        <select class="lang-select" aria-label="Language selector">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="es">ES</option>
+          <option value="de">DE</option>
+          <option value="zh">ZH</option>
+          <option value="ru">RU</option>
+          <option value="pt">PT</option>
+          <option value="hi">HI</option>
+          <option value="ar">AR</option>
+          <option value="ja">JP</option>
+        </select>
+      </div>
+    </div>
+  </header>
+ 
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Explore more</span>
+        <h2>Featured Destinations</h2>
+      </div>
+      <div class="grid grid-4">
+        <article id="dubai" class="card destination-card">
+          <div class="card-img"><span class="badge">Trending</span><img src="https://plus.unsplash.com/premium_photo-1697729914552-368899dc4757?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZHViYWl8ZW58MHx8MHx8fDA%3D" alt="Dubai"></div>
+          <div class="card-body">
+            <h3>Dubai</h3>
+            <p class="price">From &#8377;320 <span>/ night</span></p>
+            <a class="btn btn-outline mt-md" href="places/dubai.html" target="_blank" rel="noopener">Explore</a>
+          </div>
+        </article>
+        <article id="maldives" class="card destination-card">
+          <div class="card-img"><span class="badge">Beach</span><img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFsZGl2ZXMlMjByZXNvcnR8ZW58MHx8MHx8fDA%3D" alt="Maldives"></div>
+          <div class="card-body">
+            <h3>Maldives</h3>
+            <p class="price">From &#8377;540 <span>/ night</span></p>
+            <a class="btn btn-outline mt-md" href="places/maldives.html" target="_blank" rel="noopener">Explore</a>
+          </div>
+        </article>
+        <article id="goa" class="card destination-card">
+          <div class="card-img"><span class="badge">Coastal</span><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z29hfGVufDB8fDB8fHww" alt="Goa"></div>
+          <div class="card-body">
+            <h3>Goa</h3>
+            <p class="price">From &#8377;140 <span>/ night</span></p>
+            <a class="btn btn-outline mt-md" href="places/goa.html" target="_blank" rel="noopener">Explore</a>
+          </div>
+        </article>
+        <article id="paris" class="card destination-card">
+          <div class="card-img"><span class="badge">Romantic</span><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFyaXN8ZW58MHx8MHx8fDA%3D" alt="Paris"></div>
+          <div class="card-body">
+            <h3>Paris</h3>
+            <p class="price">From &#8377;290 <span>/ night</span></p>
+            <a class="btn btn-outline mt-md" href="places/paris.html" target="_blank" rel="noopener">Explore</a>
+          </div>
+        </article>
+        <article id="london" class="card destination-card">
+          <div class="card-img"><span class="badge">Urban</span><img src="https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bG9uZG9ufGVufDB8fDB8fHww" alt="London"></div>
+          <div class="card-body">
+            <h3>London</h3>
+            <p class="price">From &#8377;310 <span>/ night</span></p>
+            <a class="btn btn-outline mt-md" href="places/london.html" target="_blank" rel="noopener">Explore</a>
+          </div>
+        </article>
+        <article id="bali" class="card destination-card">
+          <div class="card-img"><span class="badge">Island</span><img src="https://plus.unsplash.com/premium_photo-1661878915254-f3163e91d870?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmFsaXxlbnwwfHwwfHx8MA%3D%3D" alt="Bali"></div>
+          <div class="card-body">
+            <h3>Bali</h3>
+            <p class="price">From &#8377;220 <span>/ night</span></p>
+            <a class="btn btn-outline mt-md" href="places/bali.html" target="_blank" rel="noopener">Explore</a>
+          </div>
+        </article>
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Skyline</span>
+            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=800&auto=format&fit=crop" alt="New York skyline">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>New York</h3><span class="rating">★ 4.7</span></div>
+            <p class="price">From ₹310 <span>/ night</span></p>
+            <a href="places/newyork.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+        <article id="tokyo" class="card destination-card">
+          <div class="card-img"><span class="badge">City</span><img src="https://plus.unsplash.com/premium_photo-1661914240950-b0124f20a5c1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG9reW98ZW58MHx8MHx8fDA%3D" alt="Tokyo"></div>
+          <div class="card-body">
+            <h3>Tokyo</h3>
+            <p class="price">From &#8377;360 <span>/ night</span></p>
+            <a class="btn btn-outline mt-md" href="places/tokyo.html" target="_blank" rel="noopener">Explore</a>
+          </div>
+        </article>
+        <article id="santorini" class="card destination-card">
+          <div class="card-img"><span class="badge">Isles</span><img src="https://plus.unsplash.com/premium_photo-1661964149725-fbf14eabd38c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U2FudG9yaW5pfGVufDB8fDB8fHww" alt="Santorini"></div>
+          <div class="card-body">
+            <h3>Santorini</h3>
+            <p class="price">From &#8377;400 <span>/ night</span></p>
+            <a class="btn btn-outline mt-md" href="places/santorini.html" target="_blank" rel="noopener">Explore</a>
+          </div>
+        </article>
+         <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Heritage</span>
+            <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/07/03172613/HI_-Offbeat-tourist-spots-in-Andhra-Pradesh.jpg?tr=w-300" alt="Andhra Pradesh">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Andhra Pradesh</h3><span class="rating">★ 4.4</span></div>
+            <p class="price">From ₹120 <span>/ night</span></p>
+            <a href="places/andhrapradesh.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Hills</span>
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop" alt="Seven Sisters scenic hills">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Seven Sisters</h3><span class="rating">★ 4.6</span></div>
+            <p class="price">From ₹180 <span>/ night</span></p>
+            <a href="places/seven-sisters.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">City</span>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg5neHt03POKuj6Q6V1ZJpC02e3QcLoJKIWXgs6L5tAg&s=10" alt="Telangana">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Telangana</h3><span class="rating">★ 4.5</span></div>
+            <p class="price">From ₹200 <span>/ night</span></p>
+            <a href="places/telangana.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Culture</span>
+            <img src="https://images.unsplash.com/photo-1659126574791-13313aa424bd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a2FybmF0YWthfGVufDB8fDB8fHww" alt="Karnataka">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Karnataka</h3><span class="rating">★ 4.6</span></div>
+            <p class="price">From ₹160 <span>/ night</span></p>
+            <a href="places/karnataka.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Backwaters</span>
+            <img src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2VyYWxhfGVufDB8fDB8fHww" alt="Kerala">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Kerala</h3><span class="rating">★ 4.7</span></div>
+            <p class="price">From ₹150 <span>/ night</span></p>
+            <a href="places/kerala.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Gateway</span>
+            <img src="https://images.unsplash.com/photo-1561006289-4fe1a09bf743?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q29pbWJhdG9yZXxlbnwwfHwwfHx8MA%3D%3D" alt="Coimbatore">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Coimbatore</h3><span class="rating">★ 4.3</span></div>
+            <p class="price">From ₹110 <span>/ night</span></p>
+            <a href="places/coimbatore.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+
+        <article class="card destination-card fade-up">
+          <div class="card-img"><span class="badge">Coastal City</span>
+            <img src="https://images.unsplash.com/photo-1661366698983-3cb843219300?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlbm5haXxlbnwwfHwwfHx8MA%3D%3D" alt="Chennai">
+          </div>
+          <div class="card-body">
+            <div class="location"><h3>Chennai</h3><span class="rating">★ 4.4</span></div>
+            <p class="price">From ₹130 <span>/ night</span></p>
+            <a href="places/chennai.html" class="btn btn-outline mt-md">Explore</a>
+          </div>
+        </article>
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section section-alt" id="destination-details">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Destination Details</span>
+        <h2>Where will your next stay be?</h2>
+        <p id="destination-summary">Click any Explore button to jump straight to that destination below.</p>
+      </div>
+ 
+      <article class="card destination-detail" id="detail-dubai">
+        <div class="detail-media">
+          <div class="detail-img"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1400&auto=format&fit=crop" alt="Dubai skyline"></div>
+          <div class="detail-gallery">
+            <button type="button"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=300&auto=format&fit=crop" alt="Dubai photo"></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=300&auto=format&fit=crop" alt="Dubai photo"></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1548632890-1bce4a6cf4b3?q=80&w=300&auto=format&fit=crop" alt="Dubai photo"></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=300&auto=format&fit=crop" alt="Dubai photo"></button>
+          </div>
+          <p class="detail-video-label">Watch</p>
+          <div class="detail-video"><iframe src="https://www.youtube.com/embed/hOd0v9QQlfM" title="Dubai video" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="detail-content">
+          <h3>Dubai</h3>
+          <p>Experience glittering skyscrapers, luxury shopping, and desert adventures. Dubai offers rooftop lounges, world-class dining, and stunning Arabian nights with modern hospitality.</p>
+          <ul class="detail-list">
+            <li>Highlights: Burj Khalifa sunset tour, desert safari, luxury mall experiences.</li>
+            <li>Top stays: downtown suites with marina and skyline views.</li>
+            <li>Best for: glamour, city luxury, nightlife, and designer dining.</li>
+          </ul>
+          <div class="price-bar">
+            <div class="amount">&#8377;320 <span>/ night, taxes extra</span></div>
+            <button type="button" class="book-btn">Check availability</button>
+          </div>
+        </div>
+      </article>
+ 
+      <article class="card destination-detail" id="detail-maldives">
+        <div class="detail-media">
+          <div class="detail-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop" alt="Maldives skyline"></div>
+          <div class="detail-gallery">
+            <button type="button"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=300&auto=format&fit=crop" alt="Maldives photo"></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=300&auto=format&fit=crop" alt="Maldives photo"></button>
+          </div>
+          <p class="detail-video-label">Watch</p>
+          <div class="detail-video"><iframe src="https://www.youtube.com/embed/Z755vZBf9oM" title="Maldives video" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="detail-content">
+          <h3>Maldives</h3>
+          <p>Relax in overwater villas and unwind on white sand beaches. The Maldives is known for its coral reefs, spa treatments, private dining, and peaceful island escapes.</p>
+          <ul class="detail-list">
+            <li>Highlights: snorkel with reef life, sunset cruises, overwater dining.</li>
+            <li>Top stays: private island villas with spa and butler service.</li>
+            <li>Best for: honeymooners, wellness retreats, and quiet luxury.</li>
+          </ul>
+          <div class="price-bar">
+            <div class="amount">&#8377;540 <span>/ night, taxes extra</span></div>
+            <button type="button" class="book-btn">Check availability</button>
+          </div>
+        </div>
+      </article>
+ 
+      <article class="card destination-detail" id="detail-goa">
+        <div class="detail-media">
+          <div class="detail-img"><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1400&auto=format&fit=crop" alt="Goa skyline"></div>
+          <div class="detail-gallery">
+            <button type="button"><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=300&auto=format&fit=crop" alt="Goa photo"></button>
+          </div>
+          <p class="detail-video-label">Watch</p>
+          <div class="detail-video"><iframe src="https://www.youtube.com/embed/e7PF46skqrQ" title="Goa video" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="detail-content">
+          <h3>Goa</h3>
+          <p>Discover energetic beach resorts, seafood dining, and lively nightlife. Goa is perfect for water sports, coastal relaxation, and a warm tropical atmosphere.</p>
+          <ul class="detail-list">
+            <li>Highlights: sunset beach parties, water sports, Portuguese heritage hotels.</li>
+            <li>Top stays: beachfront villas with private pools and spa treatments.</li>
+            <li>Best for: sun seekers, food lovers, and a laid-back luxury escape.</li>
+          </ul>
+          <div class="price-bar">
+            <div class="amount">&#8377;140 <span>/ night, taxes extra</span></div>
+            <button type="button" class="book-btn">Check availability</button>
+          </div>
+        </div>
+      </article>
+ 
+      <article class="card destination-detail" id="detail-paris">
+        <div class="detail-media">
+          <div class="detail-img"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1400&auto=format&fit=crop" alt="Paris skyline"></div>
+          <div class="detail-gallery">
+            <button type="button"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=300&auto=format&fit=crop" alt="Paris photo"></button>
+          </div>
+          <p class="detail-video-label">Watch</p>
+          <div class="detail-video"><iframe src="https://www.youtube.com/embed/PI1bt6QEkVc" title="Paris video" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="detail-content">
+          <h3>Paris</h3>
+          <p>Enjoy romantic streets, iconic monuments, and elegant hotels. Paris features art museums, gourmet cuisine, charming cafés, and unforgettable evenings by the Seine.</p>
+          <ul class="detail-list">
+            <li>Highlights: Eiffel Tower dinner, Louvre visits, luxury boutique stays.</li>
+            <li>Top stays: historic city center hotels with terrace views.</li>
+            <li>Best for: romance, culture, shopping, and gourmet travel.</li>
+          </ul>
+          <div class="price-bar">
+            <div class="amount">&#8377;290 <span>/ night, taxes extra</span></div>
+            <button type="button" class="book-btn">Check availability</button>
+          </div>
+        </div>
+      </article>
+ 
+      <article class="card destination-detail" id="detail-bali">
+        <div class="detail-media">
+          <div class="detail-img"><img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=1400&auto=format&fit=crop" alt="Bali skyline"></div>
+          <div class="detail-gallery">
+            <button type="button"><img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=300&auto=format&fit=crop" alt="Bali photo"></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=300&auto=format&fit=crop" alt="Bali photo"></button>
+          </div>
+          <p class="detail-video-label">Watch</p>
+          <div class="detail-video"><iframe src="https://www.youtube.com/embed/TsYkk-RW2sI" title="Bali video" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="detail-content">
+          <h3>Bali</h3>
+          <p>Find a calming island retreat with rice terraces, temples, and wellness escapes. Bali blends luxury resorts, cultural experiences, and scenic views for a nourishing getaway.</p>
+          <ul class="detail-list">
+            <li>Highlights: spa rituals, temple tours, jungle villas.</li>
+            <li>Top stays: cliffside resorts with infinity pools and yoga pavilions.</li>
+            <li>Best for: wellness journeys, culture seekers, and nature lovers.</li>
+          </ul>
+          <div class="price-bar">
+            <div class="amount">&#8377;220 <span>/ night, taxes extra</span></div>
+            <button type="button" class="book-btn">Check availability</button>
+          </div>
+        </div>
+      </article>
+ 
+      <article class="card destination-detail" id="detail-tokyo">
+        <div class="detail-media">
+          <div class="detail-img"><img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=1400&auto=format&fit=crop" alt="Tokyo skyline"></div>
+          <div class="detail-gallery">
+            <button type="button"><img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=300&auto=format&fit=crop" alt="Tokyo photo"></button>
+          </div>
+          <p class="detail-video-label">Watch</p>
+          <div class="detail-video"><iframe src="https://www.youtube.com/embed/TNomzoYXWMc" title="Tokyo video" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="detail-content">
+          <h3>Tokyo</h3>
+          <p>Immerse yourself in neon city life, innovative cuisine, and vibrant culture. Tokyo offers sleek hotels, historic temples, and a seamless blend of tradition and modernity.</p>
+          <ul class="detail-list">
+            <li>Highlights: skyline dining, temple visits, designer shopping.</li>
+            <li>Top stays: luxury city hotels with panoramic tower views.</li>
+            <li>Best for: modern explorers, food adventurers, and urban retreats.</li>
+          </ul>
+          <div class="price-bar">
+            <div class="amount">&#8377;360 <span>/ night, taxes extra</span></div>
+            <button type="button" class="book-btn">Check availability</button>
+          </div>
+        </div>
+      </article>
+ 
+      <article class="card destination-detail" id="detail-santorini">
+        <div class="detail-media">
+          <div class="detail-img"><img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1400&auto=format&fit=crop" alt="Santorini skyline"></div>
+          <div class="detail-gallery">
+            <button type="button"><img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=300&auto=format&fit=crop" alt="Santorini photo"></button>
+            <button type="button"><img src="https://plus.unsplash.com/premium_photo-1661964149725-fbf14eabd38c?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U2FudG9yaW5pfGVufDB8fDB8fHww" alt="Santorini photo"></button>
+          </div>
+          <p class="detail-video-label">Watch</p>
+          <div class="detail-video"><iframe src="https://www.youtube.com/embed/mEVbbQfDzSA" title="Santorini video" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="detail-content">
+          <h3>Santorini</h3>
+          <p>Take in dramatic cliffs, caldera views, and charming whitewashed villages. Santorini delivers sunsets, intimate luxury stays, and unforgettable coastal romance.</p>
+          <ul class="detail-list">
+            <li>Highlights: sunset cruises, winery tours, cliffside dining.</li>
+            <li>Top stays: cave hotels with private terraces and sea views.</li>
+            <li>Best for: romantic escapes, scenic relaxation, and island luxury.</li>
+          </ul>
+          <div class="price-bar">
+            <div class="amount">&#8377;400 <span>/ night, taxes extra</span></div>
+            <button type="button" class="book-btn">Check availability</button>
+          </div>
+        </div>
+      </article>
+ 
+      <article class="card destination-detail" id="detail-london">
+        <div class="detail-media">
+          <div class="detail-img"><img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=1400&auto=format&fit=crop" alt="London skyline"></div>
+          <div class="detail-gallery">
+            <button type="button"><img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TG9uZG9ufGVufDB8fDB8fHww" alt="London photo"></button>
+          </div>
+          <p class="detail-video-label">Watch</p>
+          <div class="detail-video"><iframe src="https://www.youtube.com/embed/PtWeqZsuzpE" title="London video" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="detail-content">
+          <h3>London</h3>
+          <p>Explore royal landmarks, theatre nights, and historic squares. London is ideal for cultural sightseeing, fine dining, and iconic city experiences.</p>
+          <ul class="detail-list">
+            <li>Highlights: West End shows, afternoon tea, royal palaces.</li>
+            <li>Top stays: Mayfair and South Bank hotels with classic elegance.</li>
+            <li>Best for: city culture, historic luxury, and weekend escapes.</li>
+          </ul>
+          <div class="price-bar">
+            <div class="amount">&#8377;310 <span>/ night, taxes extra</span></div>
+            <button type="button" class="book-btn">Check availability</button>
+          </div>
+        </div>
+      </article>
+ 
+    </div>
+  </section>
+ 
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="destinations.html" class="logo"><img src="logo.png" alt="EliteStays logo"></a>
+        <p class="text-muted">Discover curated destinations designed for luxury travel and elevated stays.</p>
+      </div>
+      <div>
+        <h4>Destination Highlights</h4>
+        <ul class="footer-links">
+          <li><a href="places/dubai.html" target="_blank" rel="noopener">Dubai</a></li><li><a href="places/maldives.html" target="_blank" rel="noopener">Maldives</a></li><li><a href="places/goa.html" target="_blank" rel="noopener">Goa</a></li><li><a href="places/paris.html" target="_blank" rel="noopener">Paris</a></li><li><a href="places/bali.html" target="_blank" rel="noopener">Bali</a></li><li><a href="places/tokyo.html" target="_blank" rel="noopener">Tokyo</a></li><li><a href="places/santorini.html" target="_blank" rel="noopener">Santorini</a></li><li><a href="places/london.html" target="_blank" rel="noopener">London</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Travel Guides</h4>
+        <ul class="footer-links">
+          <li><a href="#">Luxury Resorts</a></li>
+          <li><a href="#">Exclusive Packages</a></li>
+          <li><a href="#">Insider Tips</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Need Help?</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="rooms.html">Room Options</a></li>
+          <li><a href="offers.html">Seasonal Deals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="social-row">
+          <a href="#" target="_blank" aria-label="Instagram">IG</a>
+          <a href="#" target="_blank" aria-label="Facebook">FB</a>
+          <a href="#" target="_blank" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elite Stays &mdash; your guide to premium destinations and unforgettable stays.</p>
+    </div>
+  </footer>
+</body>
+</html>

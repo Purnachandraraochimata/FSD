@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paris | Elite Stays</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animation.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/destination.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="destination-detail-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="logo"><img src="../logo.png" alt="EliteStays logo"></a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <a href="../index.html#destinations" class="back-link">&larr; Back to all destinations</a>
+
+      <div class="detail-hero">
+        <span class="badge">Romantic</span>
+        <img id="heroImg" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Eiffel Tower, Paris">
+      </div>
+
+       <div class="section-label">Watch</div>
+      <div id="watch" class="detail-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/GljTvdEDqJM?si=7KNg5NnOx1YlH12d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div><div class="section-head">
+        <h2>Paris</h2>
+      </div>
+      <p align="center">Enjoy classic Parisian charm with elegant hotel stays, river cruises, and iconic city landmarks just minutes away.</p>
+      <ul align="center" class="detail-list">
+        <li>Highlights: Eiffel Tower views, boutique hotel gardens, and Seine dinners.</li>
+        <li>Top stays: centrally located luxury suites with city outlooks.</li>
+        <li>Best for: couples, culture lovers, and food aficionados.</li>
+      </ul>
+
+      <div class="price-bar">
+        <div class="amount">₹290 <span>/ night, taxes extra</span></div>
+        <button type="button" class="book-btn">Check availability</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elite Stays</p>
+    </div>
+  </footer>
+
+  <script>
+    function setHero(btn) {
+      const heroImg = document.getElementById('heroImg');
+      const thumbImg = btn.querySelector('img');
+      heroImg.src = thumbImg.src.replace(/w=300/, 'w=1400');
+      document.querySelectorAll('.detail-gallery button').forEach(b => b.classList.remove('active-thumb'));
+      btn.classList.add('active-thumb');
+    }
+  </script>
+</body>
+</html>

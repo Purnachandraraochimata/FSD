@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karnataka | Elite Stays</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animation.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/destination.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="destination-detail-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="logo"><img src="../logo.png" alt="EliteStays logo"></a>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container">
+      <a href="../index.html#destinations" class="back-link">&larr; Back to all destinations</a>
+      <div class="detail-hero">
+        <span class="badge">Nature & Heritage</span>
+        <img id="heroImg" src="https://images.unsplash.com/photo-1502487676493-5b4844a40d07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Mysore Palace, Karnataka">
+      </div>
+    
+       <div class="section-label">Watch</div>
+      <div id="watch" class="detail-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DIdqezxeZac?si=zli4RluWPUhHyJEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div><div class="section-head"><h2>Karnataka</h2></div>
+      <p align="center">Karnataka features everything from vibrant Bangalore nightlife and royal palaces in Mysore to the relaxed beaches of the Karavali coast and lush Western Ghats.</p>
+      <ul align="center" class="detail-list">
+        <li>Top attractions: Mysore Palace, Hampi ruins, Coorg coffee plantations, and Bangalore’s tech-and-dine scene.</li>
+        <li>Activities: heritage sightseeing, trekking in the Western Ghats, coffee and spice plantation tours.</li>
+        <li>Travel tips: Hampi is best in cooler months; Coorg is popular during monsoon for its waterfalls.</li>
+      </ul>
+      <div class="price-bar"><div class="amount">₹160 <span>/ night, taxes extra</span></div><button type="button" class="book-btn">Check availability</button></div>
+    </div>
+  </section>
+  <footer class="site-footer"><div class="container footer-bottom"><p>&copy; 2026 Elite Stays</p></div></footer>
+  <script>
+    function setHero(btn){const heroImg=document.getElementById('heroImg');const thumbImg=btn.querySelector('img');heroImg.src=thumbImg.src.replace(/w=300/,'w=1400');document.querySelectorAll('.detail-gallery button').forEach(b=>b.classList.remove('active-thumb'));btn.classList.add('active-thumb');}
+  </script>
+</body>
+</html>

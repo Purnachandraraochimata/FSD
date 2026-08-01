@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santorini | Elite Stays</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animation.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/destination.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="destination-detail-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="logo"><img src="../logo.png" alt="EliteStays logo"></a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <a href="../index.html#destinations" class="back-link">&larr; Back to all destinations</a>
+
+      <div class="detail-hero">
+        <span class="badge">Isles</span>
+        <img id="heroImg" src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Santorini cliffs and whitewashed buildings">
+      </div>
+
+       <div class="section-label">Watch</div>
+      <div id="watch" class="detail-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DIdqezxeZac?si=zli4RluWPUhHyJEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div><div class="section-head">
+        <h2>Santorini</h2>
+      </div>
+      <p align="center">Take in dramatic cliffs, caldera views, and charming whitewashed villages. Santorini delivers sunsets, intimate luxury stays, and unforgettable coastal romance.</p>
+      <ul align="center" class="detail-list">
+        <li>Highlights: sunset cruises, winery tours, cliffside dining.</li>
+        <li>Top stays: cave hotels with private terraces and sea views.</li>
+        <li>Best for: romantic escapes, scenic relaxation, and island luxury.</li>
+      </ul>
+
+      <div class="price-bar">
+        <div class="amount">₹400 <span>/ night, taxes extra</span></div>
+        <button type="button" class="book-btn">Check availability</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elite Stays</p>
+    </div>
+  </footer>
+
+  <script>
+    function setHero(btn) {
+      const heroImg = document.getElementById('heroImg');
+      const thumbImg = btn.querySelector('img');
+      heroImg.src = thumbImg.src.replace(/w=300/, 'w=1400');
+      document.querySelectorAll('.detail-gallery button').forEach(b => b.classList.remove('active-thumb'));
+      btn.classList.add('active-thumb');
+    }
+  </script>
+</body>
+</html>

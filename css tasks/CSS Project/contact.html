@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Elite Stays — reservations, group bookings, and guest support.">
+  <meta name="author" content="Elite Stays">
+  <meta name="theme-color" content="#0b3b2e">
+  <title>Contact Us |  Elite Stays</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="contact-page">
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo"><img src="logo.png" alt="EliteStays logo"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+      </nav>
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn-login">Login</a>
+      </div>
+      <div class="nav-actions">
+        <select class="lang-select" aria-label="Language selector">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="es">ES</option>
+          <option value="de">DE</option>
+          <option value="zh">ZH</option>
+          <option value="ru">RU</option>
+          <option value="pt">PT</option>
+          <option value="hi">HI</option>
+          <option value="ar">AR</option>
+          <option value="ja">JP</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">We're listening</span>
+      <h1>Contact Us</h1>
+      <p class="hero-copy">Reservations, feedback, or partnership enquiries — send us a note and the right team will follow up.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+
+      <!-- ============ CONTACT FORM ============ -->
+      <div class="fade-up">
+        <form action="#" method="post">
+
+          <fieldset>
+            <legend>Your Details</legend>
+
+            <div class="form-row">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 (555) 000-0000" pattern="[0-9+ ()-]{7,}">
+            </div>
+
+            <div class="form-row">
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="">Select a country</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ae">United Arab Emirates</option>
+                <option value="in">India</option>
+                <option value="jp">Japan</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>About You</legend>
+
+            <div class="form-row">
+              <label>Gender</label>
+              <div class="radio-row">
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="other"> Prefer not to say</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label>Purpose of Enquiry</label>
+              <div class="checkbox-row">
+                <label><input type="checkbox" name="purpose" value="reservation"> Reservation</label>
+                <label><input type="checkbox" name="purpose" value="group"> Group Booking</label>
+                <label><input type="checkbox" name="purpose" value="feedback"> Feedback</label>
+                <label><input type="checkbox" name="purpose" value="partnership"> Partnership</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="visit-date">Preferred Visit Date</label>
+              <input type="date" id="visit-date" name="visit-date">
+            </div>
+
+            <div class="form-row">
+              <label for="budget">Approximate Budget</label>
+              <input type="range" id="budget" name="budget" min="100" max="1000" step="50" value="300">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your Message</legend>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-gold">Submit</button>
+            <button type="reset" class="btn btn-outline">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ============ CONTACT INFO + MAP (iframe) ============ -->
+      <div class="fade-up">
+        <h3>Head Office</h3>
+        <p class="section-note">
+          <span class="block-demo">Elite Stays Hospitality Group</span>
+          <span class="block-demo">Reservations: reservations@elitestays</span>
+          <span class="block-demo">Support: support@elitestays</span>
+        </p>
+
+        <div class="video-wrap">
+          <iframe
+            class="map-frame"
+            src="https://www.google.com/maps?q=Hyderabad,Telangana,India&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Luxury Stay office location map">
+          </iframe>
+        </div>
+
+        <table class="compare-table mt-md">
+          <thead>
+            <tr><th>Department</th><th>Response Time</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Reservations</td><td>Within 2 hours</td></tr>
+            <tr><td>Guest Support</td><td>Within 1 hour</td></tr>
+            <tr><td>Partnerships</td><td>1–2 business days</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo"><img src="logo.png" alt="EliteStays logo"></a>
+        <p class="text-muted">A concept booking experience showcasing modern HTML &amp; CSS craft.</p>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hotels</h4>
+        <ul class="footer-links">
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elite Stays — built with <code>&lt;html&gt;</code> + <code>&lt;css&gt;</code>, no frameworks.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

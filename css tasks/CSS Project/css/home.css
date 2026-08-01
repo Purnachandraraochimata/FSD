@@ -1,0 +1,245 @@
+/* Home page styles */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(180deg, rgba(7, 39, 32, 0.55) 0%, rgba(7, 39, 32, 0.85) 100%),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1740&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  color: var(--color-ivory);
+  max-width: 900px;
+  width: 100%;
+}
+
+.hero-content h1 {
+  color: var(--color-ivory);
+}
+
+.hero-content p {
+  color: #e5ddcf;
+  margin-block: var(--space-sm) var(--space-md);
+}
+
+.booking-form {
+  margin-top: var(--space-lg);
+  background: rgba(243, 237, 228, 0.97);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: flex-end;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 160px;
+}
+
+.field-group label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-emerald-deep);
+}
+
+.field-group input,
+.field-group select {
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #cfc7b6;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  background: var(--color-white);
+}
+
+.features {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  flex: 1 1 220px;
+  text-align: center;
+  padding: var(--space-md);
+  border: 1px solid var(--color-ivory-dim);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+  color: var(--color-gold);
+}
+
+.facility-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base);
+}
+
+.facility-card:hover {
+  transform: scale(1.06);
+}
+
+.facility-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.offers-row {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  padding-bottom: var(--space-sm);
+}
+
+.offer-card {
+  flex: 0 0 280px;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card h3 {
+  color: var(--color-white);
+}
+
+.offer-card p {
+  color: rgba(255,255,255,0.85);
+}
+
+.offer-1 {
+  background: linear-gradient(135deg, var(--color-rosewood), var(--color-rosewood-light));
+}
+
+.offer-2 {
+  background: linear-gradient(135deg, var(--color-emerald-deep), var(--color-emerald));
+}
+
+.offer-3 {
+  background: linear-gradient(135deg, #8a6d1a, var(--color-gold));
+}
+
+.offer-4 {
+  background: linear-gradient(135deg, #4a1f2b, var(--color-rosewood-light));
+}
+
+.offer-5 {
+  background: linear-gradient(135deg, #0f3d3a, #145c4f);
+}
+
+.offer-tag {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  opacity: 0.35;
+  position: absolute;
+  right: 14px;
+  top: 10px;
+}
+
+.review-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-ivory-dim);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.reviewer img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold);
+}
+
+.reviewer .stars {
+  color: var(--color-gold);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.membership {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.badge-ring {
+  width: 220px;
+  height: 220px;
+  margin-inline: auto;
+  border-radius: 50%;
+  border: 2px dashed var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.badge-ring .badge-core {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--color-gold-light), var(--color-gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color-emerald-deep);
+  font-family: var(--font-display);
+  text-align: center;
+}
+
+.member-benefits li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(243,237,228,0.15);
+}
+
+.newsletter {
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 480px;
+  margin: var(--space-md) auto 0;
+  gap: 0.6rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: none;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coimbatore | Elite Stays</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animation.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/destination.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="destination-detail-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="logo"><img src="../logo.png" alt="EliteStays logo"></a>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container">
+      <a href="../index.html#destinations" class="back-link">&larr; Back to all destinations</a>
+      <div class="detail-hero">
+        <span class="badge">Gateway</span>
+        <img id="heroImg" src="https://images.unsplash.com/photo-1561006289-4fe1a09bf743?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29pbWJhdG9yZXxlbnwwfHwwfHx8MA%3D%3D" alt="Nilgiri hills near Coimbatore">
+      </div>
+       <div class="section-label">Watch</div>
+      <div id="watch" class="detail-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DIdqezxeZac?si=zli4RluWPUhHyJEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div><div class="section-head"><h2>Coimbatore</h2></div>
+      <p align="center">Coimbatore is a gateway city to the Nilgiris with a strong textile heritage, pleasant nearby hill stations and easy access to nature and industry tours.</p>
+      <ul  align="center" class="detail-list">
+        <li>Top attractions: short trips to Ooty and Coonoor, Marudamalai temple, and local textile bazaars.</li>
+        <li>Activities: hill-station excursions, local food tasting, and heritage-market shopping.</li>
+        <li>Travel tips: ideal as a base for Nilgiri hills; plan trips early to avoid traffic on hill roads.</li>
+      </ul>
+      <div class="price-bar"><div class="amount">₹110 <span>/ night, taxes extra</span></div><button type="button" class="book-btn">Check availability</button></div>
+    </div>
+  </section>
+  <footer class="site-footer"><div class="container footer-bottom"><p>&copy; 2026 Elite Stays</p></div></footer>
+  <script>
+    function setHero(btn){const heroImg=document.getElementById('heroImg');const thumbImg=btn.querySelector('img');heroImg.src=thumbImg.src.replace(/w=300/,'w=1400');document.querySelectorAll('.detail-gallery button').forEach(b=>b.classList.remove('active-thumb'));btn.classList.add('active-thumb');}
+  </script>
+</body>
+</html>

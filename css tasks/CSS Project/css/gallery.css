@@ -1,0 +1,204 @@
+  :root{
+    --thumb: clamp(140px, 24vw, 300px); /* approximate thumbnail size, used for the 2x lightbox math */
+  }
+ 
+  body{
+    margin: 0;
+    padding: calc(70px + 40px) 0 0;
+    background: linear-gradient(rgba(11, 59, 46, 0.75), rgba(11, 59, 46, 0.75)),
+      url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1400&auto=format&fit=crop") center/cover fixed no-repeat;
+    font-family: sans-serif;
+  }
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+ 
+  .diamond-wrap{
+    position: relative;
+    width: 900px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    overflow: visible;
+  }
+ 
+  /* ---- base frame: identical box model for every photo so layout math (left/top/width/height) is untouched ---- */
+  .photo{
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+    transition: transform .3s ease, box-shadow .3s ease, z-index .3s, border-color .3s;
+    transform-origin: center center;
+    overflow: visible;
+  }
+  .photo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1px;
+    transition: transform .3s ease;
+    transform-origin: center center;
+  }
+ 
+  /* row 1 — top tip: thin gold hairline */
+  .p1{ left: 38%; top: 2%;  width: 24%; height: 20%; transform: rotate(-2deg); z-index: 1;
+       padding: 6px; border: 2px solid #d4af37; }
+ 
+  /* row 2 — slightly heavier double-tone borders */
+  .p2{ left: 20%; top: 14%; width: 26%; height: 22%; transform: rotate(3deg);  z-index: 2;
+       padding: 8px; border: 3px solid #2f4f4f; }
+  .p3{ left: 54%; top: 14%; width: 26%; height: 22%; transform: rotate(-3deg); z-index: 2;
+       padding: 8px; border: 3px solid #7a3b2e; }
+ 
+  /* row 3 — widest band: boldest outlines, center photo gets the thickest frame */
+  .p4{ left: 4%;  top: 28%; width: 26%; height: 24%; transform: rotate(-2deg); z-index: 3;
+       padding: 9px; border: 4px solid #0b3b2e; }
+  .p5{
+     left: 37%; 
+     top: 26%; 
+     width: 26%; 
+     height: 26%; 
+     transform: rotate(0deg);
+     z-index: 4;
+     padding: 12px; 
+     border: 5px double #d4af37; 
+    }
+  .p6{ left: 70%;
+     top: 28%; 
+     width: 26%; 
+     height: 24%; 
+     transform: rotate(2deg); 
+     z-index: 3;
+     padding: 9px; 
+     border: 4px solid #0b3b2e; 
+    }
+ 
+  /* row 4 — mirrors row 2 weight */
+  .p7{ 
+    left: 20%; 
+    top: 46%; 
+    width: 26%; 
+    height: 22%; 
+    transform: rotate(-3deg); 
+    z-index: 2;
+    padding: 8px; 
+    border: 3px solid #7a3b2e; 
+  }
+  .p8{
+    left: 54%; 
+    top: 46%; 
+    width: 26%; 
+    height: 22%;
+    transform: rotate(3deg);
+    z-index: 2;
+    padding: 8px; 
+    border: 3px solid #2f4f4f; 
+    }
+ 
+  /* row 5 — bottom tip: mirrors row 1 */
+  .p9{
+     left: 38%; 
+     top: 60%;
+      width: 24%; 
+      height: 20%; 
+      transform: rotate(2deg);  
+      z-index: 1;
+       padding: 6px; 
+       border: 2px solid #d4af37; 
+      }
+ 
+  .photo:hover{
+    transform: rotate(0deg) scale(2);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.4);
+    z-index: 10;
+    border-color: #b8860b;
+    overflow: visible;
+  }
+  .photo:hover img {
+    transform: scale(2);
+  }
+ 
+  .lightbox{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 18, 15, 0.9);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 24px;
+  }
+  .lightbox:target{ 
+    display: flex; 
+  }
+ 
+  .lightbox-frame{
+    position: relative;
+    background: #fff;
+    padding: 14px 14px 18px;
+    border-radius: 4px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+  }
+ 
+  .lightbox img{
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: min(calc(var(--thumb) * 2), 94vw);
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 2px;
+  }
+ 
+  .lightbox-close{
+    position: absolute;
+    top: -18px; right: -18px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #d4af37;
+    color: #0b3b2e;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  }
+ 
+  @media (max-width: 720px){
+    .diamond-wrap{ aspect-ratio: auto; height: auto; }
+    .photo{
+      position: static;
+      display: block;
+      width: 82% !important;
+      height: auto !important;
+      margin: 16px auto;
+      transform: none !important;
+    }
+    .photo img{ height: 280px; }
+  }
+ 
+  @media (max-width: 480px){
+    .lightbox-close{ top: -14px; right: 0; }
+  }
+
+/* Gallery-specific footer spacing tweaks: remove extra bottom gap */
+.site-footer {
+  padding-bottom: 0 !important;
+}
+.footer-bottom {
+  padding: 8px 0 !important;
+}

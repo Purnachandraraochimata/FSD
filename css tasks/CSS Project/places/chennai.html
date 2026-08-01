@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chennai | Elite Stays</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animation.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/destination.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="destination-detail-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="logo"><img src="../logo.png" alt="EliteStays logo"></a>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container">
+      <a href="../index.html#destinations" class="back-link">&larr; Back to all destinations</a>
+      <div class="detail-hero">
+        <span class="badge">Coastal City</span>
+        <img id="heroImg" src="https://media.istockphoto.com/id/1226340114/photo/puratchi-thalaivar-dr-mgr-central-railway-station-chennai-central-railway-station-india.webp?a=1&b=1&s=612x612&w=0&k=20&c=TF2BSVQw25WtC5YsF1WPukWmXCaEgLDWNlCvaTQxsNQ=" alt="Chennai Central station">
+      </div>
+      <div class="section-label">Watch</div>
+      <div id="watch" class="detail-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/qRkjtHA5ja4?si=fyekqLsFQvLBAeWp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div><div class="section-head"><h2>Chennai</h2></div>
+      <p align="center">Chennai is a coastal metropolis with classical South Indian culture, historic temples, long beaches and an acclaimed food scene focused on traditional Tamil cuisine.</p>
+      <ul class="detail-list" align="center">
+        <li>Top attractions: Marina Beach, Kapaleeshwarar Temple, Fort St. George, and the Government Museum.</li>
+        <li>Activities: beach walks, temple visits, classical music and dance performances, and sampling local Chettinad and filter coffee.</li>
+        <li>Travel tips: avoid midday heat; evenings on Marina Beach are pleasant and lively.</li>
+      </ul>
+      <div class="price-bar"><div class="amount">₹130 <span>/ night, taxes extra</span></div><button type="button" class="book-btn">Check availability</button></div>
+    </div>
+  </section>
+  <footer class="site-footer"><div class="container footer-bottom"><p>&copy; 2026 Elite Stays</p></div></footer>
+  <script>
+    function setHero(btn){const heroImg=document.getElementById('heroImg');const thumbImg=btn.querySelector('img');heroImg.src=thumbImg.src.replace(/w=300/,'w=1400');document.querySelectorAll('.detail-gallery button').forEach(b=>b.classList.remove('active-thumb'));btn.classList.add('active-thumb');}
+  </script>
+</body>
+</html>
