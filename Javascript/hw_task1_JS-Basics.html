@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background: linear-gradient(135deg, #6c5dd3, #c895ff);
+            font-family: Arial, sans-serif;
+            color: #222;
+            padding: 20px;
+        }
+        .cantainer{
+            width: 420px;
+            max-width: 100%;
+            background: linear-gradient(180deg, #ffffff, #e5e3ff);
+            border-radius: 30px;
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 24px;
+            gap: 30px;
+            margin: 0;
+        }
+        .cantainer h1{
+            margin: 0;
+            font-size: 2.1rem;
+            color: #2d2659;
+            text-align: center;
+        }
+        .cantainer label{
+            font-size: 0.95rem;
+            color: #403f5c;
+        }
+        .cantainer input{
+            border-radius: 20px;
+            height: 40px;
+            padding: 0 14px;
+            border: 1px solid #c8c4d9;
+            font-size: 0.95rem;
+            background: #fff;
+
+        }
+    </style>
+    <script>
+        function displayelement(){
+    var m1 =parseInt(document.getElementById("n1").value);
+    var m2 =parseInt(document.getElementById("n2").value);
+    var m3 =parseInt(document.getElementById("n3").value);
+    var sum=m1+m2+m3;
+    document.write(sum);
+}
+    </script>
+</head>
+<body>
+    <div class="cantainer">
+    <div><label>Enter num1:</label>
+    <input type="text"  id="n1"></div>
+   <div> <label>Enter num2: </label>
+    <input type="text" id="n2"></div>
+    <div><label>Enter num3: </label>
+    <input type="text" id="n3"></div>
+    <div ><button onclick="displayelement()" class="box">add</button></div>
+    </div>
+</body>
+</html>

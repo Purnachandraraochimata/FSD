@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6c5dd3, #c895ff);
+      font-family: Arial, sans-serif;
+      color: #222;
+      padding: 20px;
+    }
+
+    .box {
+      width: 420px;
+      max-width: 100%;
+      background: linear-gradient(180deg, #ffffff, #e5e3ff);
+      border-radius: 30px;
+      border: 2px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 24px;
+      gap: 30px;
+    }
+
+    .box h1 {
+      margin: 0;
+      font-size: 2.1rem;
+      color: #2d2659;
+      text-align: center;
+    }
+
+    .field {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 0.95rem;
+      color: #403f5c;
+    }
+
+    input {
+      border-radius: 20px;
+      height: 40px;
+      padding: 0 14px;
+      border: 1px solid #c8c4d9;
+      font-size: 0.95rem;
+      background: #fff;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #7d6bff;
+      box-shadow: 0 0 0 3px rgba(125, 107, 255, 0.18);
+    }
+
+    .line {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .line button {
+      background-color: plum;
+      color: black;
+      height: 38px;
+      min-width: 140px;
+      width: calc(50% - 12px);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .line button:hover {
+      background-color: violet;
+      transform: translateY(-1px);
+    }
+
+    .line button.clear {
+      background: #fff;
+      color: #333;
+      border: 1px solid #c7cdd7;
+    }
+
+    .line button.clear:hover {
+      background: #f4f6fb;
+    }
+
+    @media (max-width: 520px) {
+      .line button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Calculator</h1>
+    <div class="field">
+      <label for="n1">Enter Num1 :</label>
+      <input type="text" id="n1" placeholder="enter the num1" inputmode="decimal">
+    </div>
+    <div class="field">
+      <label for="n2">Enter Num2 :</label>
+      <input type="text" id="n2" placeholder="enter the num2" inputmode="decimal">
+    </div>
+    <div class="field">
+      <label for="res">Result :</label>
+      <input type="text" id="res" readonly placeholder="Result appears here">
+    </div>
+    <div class="line">
+      <button type="button" data-op="add">add(+)</button>
+      <button type="button" data-op="multiply">Multiply(*)</button>
+      <button type="button" data-op="subtract">substract(-)</button>
+      <button type="button" data-op="divide">division(/)</button>
+      <button type="button" data-op="modulo">modules(%)</button>
+      <button type="button" data-op="power">exponent(**)</button>
+      <button type="button" class="clear" data-op="clear">Clear</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const n1 = document.getElementById('n1');
+      const n2 = document.getElementById('n2');
+      const res = document.getElementById('res');
+      const buttons = document.querySelectorAll('[data-op]');
+
+      function parseValue(value) {
+        return Number(value.trim());
+      }
+
+      function setResult(value) {
+        res.value = value;
+      }
+
+      function calculate(operation) {
+        const num1 = parseValue(n1.value);
+        const num2 = parseValue(n2.value);
+
+        if (operation === 'clear') {
+          n1.value = '';
+          n2.value = '';
+          setResult('');
+          return;
+        }
+
+        if (!Number.isFinite(num1) || !Number.isFinite(num2)) {
+          setResult('Enter valid numbers');
+          return;
+        }
+
+        let output;
+        switch (operation) {
+          case 'add':
+            output = num1 + num2;
+            break;
+          case 'subtract':
+            output = num1 - num2;
+            break;
+          case 'multiply':
+            output = num1 * num2;
+            break;
+          case 'divide':
+            output = num2 === 0 ? 'Cannot divide by zero' : num1 / num2;
+            break;
+          case 'modulo':
+            output = num2 === 0 ? 'Cannot modulo zero' : num1 % num2;
+            break;
+          case 'power':
+            output = num1 ** num2;
+            break;
+          default:
+            output = 'Invalid operation';
+        }
+
+        if (typeof output === 'number' && Number.isFinite(output)) {
+          setResult(Number.isInteger(output) ? output : output.toFixed(4));
+        } else {
+          setResult(output);
+        }
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => calculate(button.dataset.op));
+      });
+    });
+  </script>
+</body>
+</html>

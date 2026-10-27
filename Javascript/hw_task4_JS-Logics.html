@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Conditional Statements Tasks</title>
+</head>
+<body>
+    <h1>1. Given Character is Vowel or Not</h1>
+    <label>Enter the Character: </label>
+    <input type="text" placeholder="A/B/C...a/b/c..." id="n1">
+    <br><br>
+    <label>Result: </label>
+    <input type="text" id="res1" placeholder="Vowel or Not">
+    <button onclick="vowelOrNot()">Check</button>
+    <hr>
+    <h1>2. Given Number is Between 20 to 25 or Not</h1>
+    <label>Enter the Number: </label>
+    <input type="text" placeholder="Enter a number" id="n2">
+    <br><br>
+    <label>Result: </label>
+    <input type="text" id="res2" placeholder="Result">
+    <button onclick="range()">Check</button>
+    <hr>
+    <h1>3. Given Alphabet is Uppercase or Not</h1>
+    <label>Enter the Alphabet: </label>
+    <input type="text" placeholder="A/B/C...a/b/c..." id="n3">
+    <br><br>
+    <label>Result: </label>
+    <input type="text" id="res3" placeholder="Uppercase or Not">
+    <button onclick="UpperCase()">Check</button>
+    <hr>
+    <h1>4. Given Alphabet is Lowercase or Not</h1>
+    <label>Enter the Alphabet: </label>
+    <input type="text" placeholder="A/B/C...a/b/c..." id="n4">
+    <br><br>
+    <label>Result: </label>
+    <input type="text" id="res4" placeholder="Lowercase or Not">
+    <button onclick="lowerCase()">Check</button>
+    <hr>
+    <h1>5. Given Value is Alphabet or Not</h1>
+    <label>Enter the Value: </label>
+    <input type="text" placeholder="Enter a value" id="n5">
+    <br><br>
+    <label>Result: </label>
+    <input type="text" id="res5" placeholder="Alphabet or Not">
+    <button onclick="alphabet()">Check</button>
+    <hr>
+    <h1>6. Given Number is a Digit or Not</h1>
+    <label>Enter the Number: </label>
+    <input type="text" placeholder="Enter a digit" id="n6">
+    <br><br>
+    <label>Result: </label>
+    <input type="text" id="res6" placeholder="Digit or Not">
+    <button onclick="digit()">Check</button>
+    <hr>
+    <h1>7. Username and Password Match or Not</h1>
+    <label>Enter the Username: </label>
+    <input type="text" placeholder="Username" id="n7">
+    <br><br>
+    <label>Enter the Password: </label>
+    <input type="password" placeholder="Password" id="n8">
+    <br><br>
+    <label>Result: </label>
+    <input type="text" id="res7" placeholder="Result">
+    <button onclick="login()">Check</button>
+    <script>
+        // 1. Vowel or Not
+        function vowelOrNot() {
+            let ch = document.getElementById("n1").value;
+            let res;
+            if (ch.length === 1 &&
+                "AEIOUaeiou".includes(ch)) {
+                res = "VOWEL!!!!";
+            } else {
+                res = "Not a VOWEL!!!!";
+            }
+            document.getElementById("res1").value = res;
+        }
+
+        // 2. Number Between 20 and 25
+        function range() {
+            let val = document.getElementById("n2").value;
+            let res;
+            if (val.trim() !== "" &&
+                Number(val) >= 20 &&
+                Number(val) <= 25) {
+                res = "In Range";
+            } else {
+                res = "Not in Range";
+            }
+            document.getElementById("res2").value = res;
+        }
+
+        // 3. Uppercase or Not
+        function UpperCase() {
+            let ch = document.getElementById("n3").value;
+            let res;
+            if (ch.length === 1 && ch >= "A" && ch <= "Z") {
+                res = "Uppercase";
+            } else {
+                res = "Not Uppercase";
+            }
+            document.getElementById("res3").value = res;
+        }
+
+        // 4. Lowercase or Not
+        function lowerCase() {
+            let ch = document.getElementById("n4").value;
+            let res;
+            if (ch.length === 1 && ch >= "a" && ch <= "z") {
+                res = "Lowercase";
+            } else {
+                res = "Not Lowercase";
+            }
+            document.getElementById("res4").value = res;
+        }
+
+        // 5. Alphabet or Not
+        function alphabet() {
+            let val = document.getElementById("n5").value;
+            let res;
+            if (val.length === 1 &&
+                ((val >= "a" && val <= "z") ||
+                 (val >= "A" && val <= "Z"))) {
+                res = "Alphabet";
+            } else {
+                res = "Not an Alphabet";
+            }
+            document.getElementById("res5").value = res;
+        }
+
+        // 6. Digit or Not
+        function digit() {
+            let val = document.getElementById("n6").value;
+            let res;
+            if (/^[0-9]$/.test(val)) {
+                res = "Digit";
+            } else {
+                res = "Not a Digit";
+            }
+            document.getElementById("res6").value = res;
+        }
+
+        // 7. Username and Password Validation
+        function login() {
+            let uName = document.getElementById("n7").value;
+            let uPass = document.getElementById("n8").value;
+            let res;
+            if (uName === "Chandu" && uPass === "P@666") {
+                res = "Login Successful!!!!!!!";
+            } else {
+                res = "Invalid Credentials";
+            }
+            document.getElementById("res7").value = res;
+        }
+    </script>
+</body>
+</html>

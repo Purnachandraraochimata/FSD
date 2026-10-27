@@ -4,14 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transition Flip Cards</title>
-
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 body{
     height:100vh;
     display:flex;
@@ -19,18 +17,15 @@ body{
     align-items:center;
     background-color: skyblue;
 }
-
 .container{
     display:flex;
     gap:40px;
 }
-
 .card{
     width:180px;
     height:250px;
     perspective:1000px;
 }
-
 .card-inner{
     width:100%;
     height:100%;
@@ -39,7 +34,6 @@ body{
     border:2px solid black;
     border-radius: 16px;
 }
-
 .front,
 .back{
     position:absolute;
@@ -55,41 +49,32 @@ body{
     backface-visibility:hidden;
    
 }
-
 .back{
     transform:rotateX(180deg);
 }
-
 .card1 .card-inner{
     transition:1s;
 }
-
 .card1:hover .card-inner{
     transform:rotateX(180deg);
 }
-
 .card1 .front{
     background:red;
 }
-
 .card1 .back{
     background:green;
     font-size: larger;
 }
-
 .card2 .card-inner{
     transition:1s;
     
 }
-
 .card2:hover .card-inner{
     transform:rotateY(180deg);
 }
-
 .card2 .front{
     background:blue;
 }
-
 .card2 .back{
     background:orange;
     transform:rotateY(180deg)
@@ -107,7 +92,6 @@ body{
         transform:rotateX(360deg);
     }
 }
-
 .card3 .card-inner{
     animation-name: flip;
     animation-duration: 4s;
@@ -120,7 +104,6 @@ body{
 .card3 .front{
     background:purple;
 }
-
 .card3 .back{
     background:gold;
 }
@@ -137,7 +120,6 @@ body{
         transform:rotateY(360deg);
     }
 }
-
 .card4 .card-inner{
     animation-name:flip1;
     animation-duration:3s;
@@ -147,7 +129,6 @@ body{
 .card4 .front{
     background:blueviolet;
 }
-
 .card4 .back{
     background:black;
      transform:rotateY(180deg);

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Logic Examples</title>
+</head>
+<body>
+    <h1>====== Adding Two Numbers ======</h1>
+    <label>Enter Number 1:</label>
+    <input type="number" id="n1" placeholder="Num1"><br>
+    <label>Enter Number 2:</label>
+    <input type="number" id="n2" placeholder="Num2"><br>
+    <label>Result:</label>
+    <input type="text" id="res" placeholder="Result" readonly><br>
+    <button onclick="addTwo()">SUM</button>
+    <h1>====== Average of 3 Numbers ======</h1>
+    <label>Enter Number 1:</label>
+    <input type="number" id="n3" placeholder="Num1"><br>
+    <label>Enter Number 2:</label>
+    <input type="number" id="n4" placeholder="Num2"><br>
+    <label>Enter Number 3:</label>
+    <input type="number" id="n5" placeholder="Num3"><br>
+    <label>Result:</label>
+    <input type="text" id="res1" readonly><br>
+    <button onclick="avg1()">Average</button>
+    <h1>====== Sum of First n Natural Numbers ======</h1>
+    <label>Enter Number n:</label>
+    <input type="number" id="n6" placeholder="Num"><br>
+    <label>Result:</label>
+    <input type="text" id="res2" readonly><br>
+    <button onclick="nSum()">Sum</button>
+    <h1>====== Average of First n Natural Numbers ======</h1>
+    <label>Enter Number n:</label>
+    <input type="number" id="n7" placeholder="Num"><br>
+    <label>Result:</label>
+    <input type="text" id="res3" readonly><br>
+    <button onclick="avg()">Average</button>
+    <h1>====== Profit Percentage ======</h1>
+    <label>Enter Cost Price:</label>
+    <input type="number" id="n8" placeholder="CP"><br>
+    <label>Enter Selling Price:</label>
+    <input type="number" id="n9" placeholder="SP"><br>
+    <label>Result:</label>
+    <input type="text" id="res4" readonly><br>
+    <button onclick="ppg()">Profit Percentage</button>
+    <h1>====== Simple Interest ======</h1>
+    <label>Enter Principal Amount:</label>
+    <input type="number" id="n10" placeholder="Principal"><br>
+    <label>Enter Time:</label>
+    <input type="number" id="n11" placeholder="Time"><br>
+    <label>Enter Rate of Interest:</label>
+    <input type="number" id="n12" placeholder="Rate"><br>
+    <label>Result:</label>
+    <input type="text" id="res5" readonly><br>
+    <button onclick="si()">Simple Interest</button>
+    <script>
+        function addTwo() {
+            let n1 = parseFloat(document.getElementById("n1").value);
+            let n2 = parseFloat(document.getElementById("n2").value);
+            document.getElementById("res").value = n1 + n2;
+        }
+        function avg1() {
+            let n1 = parseFloat(document.getElementById("n3").value);
+            let n2 = parseFloat(document.getElementById("n4").value);
+            let n3 = parseFloat(document.getElementById("n5").value);
+            document.getElementById("res1").value = (n1 + n2 + n3) / 3;
+        }
+        function nSum() {
+            let n = parseInt(document.getElementById("n6").value);
+            document.getElementById("res2").value = (n * (n + 1)) / 2;
+        }
+        function avg() {
+            let n = parseInt(document.getElementById("n7").value);
+            let sum = (n * (n + 1)) / 2;
+            document.getElementById("res3").value = sum / n;
+        }
+        function ppg() {
+            let cp = parseFloat(document.getElementById("n8").value);
+            let sp = parseFloat(document.getElementById("n9").value);
+            let profit = sp - cp;
+            document.getElementById("res4").value = (profit / cp) * 100;
+        }
+        function si() {
+            let p = parseFloat(document.getElementById("n10").value);
+            let t = parseFloat(document.getElementById("n11").value);
+            let r = parseFloat(document.getElementById("n12").value);
+            document.getElementById("res5").value = (p * t * r) / 100;
+        }
+    </script>
+</body>
+</html>
