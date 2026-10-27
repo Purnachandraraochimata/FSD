@@ -4,77 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Full Stack Tasks</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 25px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 25px;
+        }
+        .tasks-container {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            align-items: start;
+        }
+        .task-section {
+            background-color: white;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            min-width: 0;
+        }
+        .task-section h2 {
+            font-size: 22px;
+            text-align: center;
+            margin-top: 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #ddd;
+        }
+        .task-section ul {
+            padding-left: 22px;
+            margin-bottom: 0;
+        }
+        .task-section li {
+            margin-bottom: 10px;
+            overflow-wrap: anywhere;
+        }
+        .task-section a {
+            color: #0757c9;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .task-section a:hover {
+            color: #e65100;
+            text-decoration: underline;
+        }
+        /* Tablet: 2 columns */
+        @media (max-width: 1100px) {
+            .tasks-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        /* Mobile: 1 column */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            .tasks-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<h2>HTML Tasks</h2>
-<ul>
-    <li><a href="Html tasks/hw_task1_Basics.html">Task 1</a></li>
-    <li><a href="Html tasks/hw_task2_Fonts.html">Task 2</a></li>
-    <li><a href="Html%20tasks/hw_task3_Images/Home.html">Task 3</a></li>
-    <li><a href="Html tasks/hw_task4a_Lists.html">Task 4a</a></li>
-    <li><a href="Html tasks/hw_task4b_Lists.html">Task 4b</a></li>
-    <li><a href="Html tasks/hw_task5_Tables.html">Task 5</a></li>
-    <li><a href="Html tasks/hw_task6_Chess.html">Task 6</a></li>
-    <li><a href="Html tasks/hw_task7_Ludo.html">Task 7</a></li>
-    <li><a href="Html tasks/hw_task8_Table &NestedLists.html">Task 8</a></li>
-    <li><a href="Html tasks/hw_task9_TableImages.html">Task 9</a></li>
-    <li><a href="Html tasks/hw_task10_SemanticTags.html">Task 10</a></li>
-    <li><a href="Html tasks/Portfolio/about.html">Portfolio</a></li>
-</ul>
-<h2>CSS Tasks</h2>
-<ul>
-    <li><a href="css tasks/hw_task1_Basics.html">Task 1</a></li>
-    <li><a href="css tasks/hw_task2_CafeWebsite.html/reservations.html">Task 2</a></li>
-    <li><a href="css tasks/hw_task3_Cards.html">Task 3</a></li>
-    <li><a href="css tasks/hw_task4_Positions.html">Task 4</a></li>
-    <li><a href="css tasks/hw_task5_Moon Phases.html">Task 5</a></li>
-    <li><a href="css tasks/hw_task6_Flex Basics.html">Task 6</a></li>
-    <li><a href="css tasks/hw_task7_Flexbox Layout.html">Task 7</a></li>
-    <li><a href="css tasks/hw_task8_Grid+Flex.html">Task 8</a></li>
-    <li><a href="css tasks/hw_task9_Grid-9Layouts.html">Task 9</a></li>
-    <li><a href="css tasks/hw_task10_Grid Layout.html">Task 10</a></li>
-    <li><a href="css tasks/hw_task11_grid_Dashboard.html">Task 11</a></li>
-    <li><a href="css tasks/hw_task12_Grid_Area.html">Task 12</a></li>
-    <li><a href="css tasks/hw_task13_Cube Animation.html">Task 13</a></li>
-    <li><a href="css tasks/hw_task14_Innomatics logo.html">Logo</a></li>
-    <li><a href="css tasks/hw_task15_Transition and Animation Flip Cards.html">Transition</a></li>
-    <li><a href="css tasks/CSS Project/home.html">Project</a></li>
-</ul>
-<h2>Bootstrap Tasks</h2>
-<ul>
-    <li><a href="Bootstrap task.html">Layout</a></li>
-</ul>
-<h2>Java Script Tasks</h2>
-<ul>
-    <li><a href="Javascript/hw_task1_JS-Basics.html">Task 1</a></li>
-    <li><a href="Javascript/hw_task2_JS-Functions.html">Task 2</a></li>
-    <li><a href="Javascript/hw_task3_JS-BasicLogics.html">Task 3</a></li>
-    <li><a href="Javascript/hw_task4_JS-Logics.html">Task 4</a></li>
-    <li><a href="Javascript/hw_task5_JS-Calculator.js">Task 5</a></li>
-    <li><a href="Javascript/hw_task6_JS-LoopsTask1.js">Task 6</a></li>
-    <li><a href="Javascript/hw_task7_JS-LoopsTask3.js">Task 7</a></li>
-    <li><a href="Javascript/hw_task8_JS-LoopsTask3.js">Task 8</a></li>
-    <li><a href="Javascript/hw_task9_JS-For to while.js">Task 9</a></li>
-    <li><a href="Javascript/hw_task10_JS-WhileLoop.js">Task 10</a></li>
-    <li><a href="Javascript/hw_task11_JS-Patterns.html">Task 11</a></li>
-    <li><a href="Javascript/hw_task12_JS-LeftAlignedPatterns.html">Task 12</a></li>
-    <li><a href="Javascript/hw_task13_JS-LetterPattern.html">Task 13</a></li>
-    <li><a href="Javascript/hw_task14_JS-Nested Loops.js">Task 14</a></li>
-    <li><a href="Javascript/hw_task15_JS-NamedFunction.js">Task 15</a></li>
-    <li><a href="Javascript/hw_task16_AnonymousFunction.js">Task 16</a></li>
-    <li><a href="Javascript/hw_task17_JS-ArrowFunction.js">Task 17</a></li>
-    <li><a href="Javascript/hw_task18_JS-Object&Crud.js">Task 18</a></li>
-    <li><a href="Javascript/hw_task19_JS-ObjectConstructor.js">Task 19</a></li>
-    <li><a href="Javascript/hw_task20_JS-NestedObjectCrud.js">Task 20</a></li>
-    <li><a href="Javascript/hw_task21_JS-ObjectFunction.js">Task 21</a></li>
-    <li><a href="Javascript/hw_task22_JS-CalculatorClass.js">Task 22</a></li>
-    <li><a href="Javascript/hw_task23_JS-Static and Instance.js">Task 23</a></li>
-    <li><a href="Javascript/hw_task24_JS-Constructor1.js">Task 24</a></li>
-    <li><a href="Javascript/hw_task25_JS-Encapsulation.js">Task 25</a></li>
-    <li><a href="Javascript/hw_task26_JS-Inheritance.js">Task 26</a></li>
-    <li><a href="Javascript/hw_task27_JS-MultiLevelInheritance.js">Task 27</a></li>
-    <li><a href="Javascript/hw_task28_JS-Polymorphism.js">Task 28</a></li>
-    <li><a href="Javascript/Loops and Conditional Statements.js">Task 29</a></li>
-</ul>
+    <h1>My Full Stack Tasks</h1>
+    <div class="tasks-container">
+        <!-- HTML TASKS -->
+        <div class="task-section">
+            <h2>HTML Tasks</h2>
+            <ul>
+                <li><a href="Html tasks/hw_task1_Basics.html">Task 1</a></li>
+                <li><a href="Html tasks/hw_task2_Fonts.html">Task 2</a></li>
+                <li><a href="Html%20tasks/hw_task3_Images/Home.html">Task 3</a></li>
+                <li><a href="Html tasks/hw_task4a_Lists.html">Task 4a</a></li>
+                <li><a href="Html tasks/hw_task4b_Lists.html">Task 4b</a></li>
+                <li><a href="Html tasks/hw_task5_Tables.html">Task 5</a></li>
+                <li><a href="Html tasks/hw_task6_Chess.html">Task 6</a></li>
+                <li><a href="Html tasks/hw_task7_Ludo.html">Task 7</a></li>
+                <li><a href="Html tasks/hw_task8_Table &NestedLists.html">Task 8</a></li>
+                <li><a href="Html tasks/hw_task9_TableImages.html">Task 9</a></li>
+                <li><a href="Html tasks/hw_task10_SemanticTags.html">Task 10</a></li>
+                <li><a href="Html tasks/Portfolio/about.html">Portfolio</a></li>
+            </ul>
+        </div>
+        <!-- CSS TASKS -->
+        <div class="task-section">
+            <h2>CSS Tasks</h2>
+            <ul>
+                <li><a href="css tasks/hw_task1_Basics.html">Task 1</a></li>
+                <li><a href="css tasks/hw_task2_CafeWebsite.html/reservations.html">Task 2</a></li>
+                <li><a href="css tasks/hw_task3_Cards.html">Task 3</a></li>
+                <li><a href="css tasks/hw_task4_Positions.html">Task 4</a></li>
+                <li><a href="css tasks/hw_task5_Moon Phases.html">Task 5</a></li>
+                <li><a href="css tasks/hw_task6_Flex Basics.html">Task 6</a></li>
+                <li><a href="css tasks/hw_task7_Flexbox Layout.html">Task 7</a></li>
+                <li><a href="css tasks/hw_task8_Grid+Flex.html">Task 8</a></li>
+                <li><a href="css tasks/hw_task9_Grid-9Layouts.html">Task 9</a></li>
+                <li><a href="css tasks/hw_task10_Grid Layout.html">Task 10</a></li>
+                <li><a href="css tasks/hw_task11_grid_Dashboard.html">Task 11</a></li>
+                <li><a href="css tasks/hw_task12_Grid_Area.html">Task 12</a></li>
+                <li><a href="css tasks/hw_task13_Cube Animation.html">Task 13</a></li>
+                <li><a href="css tasks/hw_task14_Innomatics logo.html">Logo</a></li>
+                <li><a href="css tasks/hw_task15_Transition and Animation Flip Cards.html">Transition</a></li>
+                <li><a href="css tasks/CSS Project/home.html">Project</a></li>
+            </ul>
+        </div>
+        <!-- BOOTSTRAP TASKS -->
+        <div class="task-section">
+            <h2>Bootstrap Tasks</h2>
+            <ul>
+                <li><a href="Bootstrap task.html">Layout</a></li>
+                <li><a href="Html,Css,Bootstrap exam.html">HTML, CSS & Bootstrap Exam</a></li>
+            </ul>
+        </div>
+        <!-- JAVASCRIPT TASKS -->
+        <div class="task-section">
+            <h2>JavaScript Tasks</h2>
+            <ul>
+                <li><a href="Javascript/hw_task1_JS-Basics.html">Task 1</a></li>
+                <li><a href="Javascript/hw_task2_JS-Functions.html">Task 2</a></li>
+                <li><a href="Javascript/hw_task3_JS-BasicLogics.html">Task 3</a></li>
+                <li><a href="Javascript/hw_task4_JS-Logics.html">Task 4</a></li>
+                <li><a href="Javascript/hw_task5_JS-Calculator.js">Task 5</a></li>
+                <li><a href="Javascript/hw_task6_JS-LoopsTask1.js">Task 6</a></li>
+                <li><a href="Javascript/hw_task7_JS-LoopsTask3.js">Task 7</a></li>
+                <li><a href="Javascript/hw_task8_JS-LoopsTask3.js">Task 8</a></li>
+                <li><a href="Javascript/hw_task9_JS-For to while.js">Task 9</a></li>
+                <li><a href="Javascript/hw_task10_JS-WhileLoop.js">Task 10</a></li>
+                <li><a href="Javascript/hw_task11_JS-Patterns.html">Task 11</a></li>
+                <li><a href="Javascript/hw_task12_JS-LeftAlignedPatterns.html">Task 12</a></li>
+                <li><a href="Javascript/hw_task13_JS-LetterPattern.html">Task 13</a></li>
+                <li><a href="Javascript/hw_task14_JS-Nested Loops.js">Task 14</a></li>
+                <li><a href="Javascript/hw_task15_JS-NamedFunction.js">Task 15</a></li>
+                <li><a href="Javascript/hw_task16_AnonymousFunction.js">Task 16</a></li>
+                <li><a href="Javascript/hw_task17_JS-ArrowFunction.js">Task 17</a></li>
+                <li><a href="Javascript/hw_task18_JS-Object&Crud.js">Task 18</a></li>
+                <li><a href="Javascript/hw_task19_JS-ObjectConstructor.js">Task 19</a></li>
+                <li><a href="Javascript/hw_task20_JS-NestedObjectCrud.js">Task 20</a></li>
+                <li><a href="Javascript/hw_task21_JS-ObjectFunction.js">Task 21</a></li>
+                <li><a href="Javascript/hw_task22_JS-CalculatorClass.js">Task 22</a></li>
+                <li><a href="Javascript/hw_task23_JS-Static and Instance.js">Task 23</a></li>
+                <li><a href="Javascript/hw_task24_JS-Constructor1.js">Task 24</a></li>
+                <li><a href="Javascript/hw_task25_JS-Encapsulation.js">Task 25</a></li>
+                <li><a href="Javascript/hw_task26_JS-Inheritance.js">Task 26</a></li>
+                <li><a href="Javascript/hw_task27_JS-MultiLevelInheritance.js">Task 27</a></li>
+                <li><a href="Javascript/hw_task28_JS-Polymorphism.js">Task 28</a></li>
+                <li><a href="Javascript/Loops and Conditional Statements.js">Task 29</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
